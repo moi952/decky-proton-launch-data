@@ -63,7 +63,20 @@
       "category": "debug",
       "variables": [
         { "title": "proton_log", "env": "PROTON_LOG", "type": "bool", "value": "1" },
-        { "title": "mangohud", "env": "MANGOHUD", "type": "bool", "value": "1" }
+        { "title": "mangohud", "env": "MANGOHUD", "type": "bool", "value": "1" },
+        {
+          "title": "mangohud_config",
+          "env": "MANGOHUD_CONFIG",
+          "type": "enum",
+          "defaultValue": "fps_only=1",
+          "values": [
+            { "title": "mangohud_no_display", "value": "no_display" },
+            { "title": "mangohud_fps_only", "value": "fps_only=1" },
+            { "title": "mangohud_medium", "value": "cpu_stats,gpu_stats,fps,frametime" },
+            { "title": "mangohud_extended", "value": "cpu_stats,gpu_stats,fps,frametime,cpu_temp,gpu_temp,vram,ram,gpu_power" },
+            { "title": "mangohud_full", "value": "full" }
+          ]
+        }
       ]
     }
   ],
@@ -104,6 +117,12 @@
         "steam_deck": "Steam Deck Mode",
         "proton_log": "Proton Log",
         "mangohud": "MangoHud",
+        "mangohud_config": "MangoHud Overlay Level",
+        "mangohud_no_display": "Disabled",
+        "mangohud_fps_only": "Minimal (FPS only)",
+        "mangohud_medium": "Medium (CPU/GPU + FPS)",
+        "mangohud_extended": "Extended (+ temps & memory)",
+        "mangohud_full": "Full (show everything)",
         "enable_prefix": "Enable",
         "disable_prefix": "Disable"
       }
@@ -144,6 +163,12 @@
         "steam_deck": "Mode Steam Deck",
         "proton_log": "Log Proton",
         "mangohud": "MangoHud",
+        "mangohud_config": "Niveau d'overlay MangoHud",
+        "mangohud_no_display": "Désactivé",
+        "mangohud_fps_only": "Minimal (FPS uniquement)",
+        "mangohud_medium": "Moyen (CPU/GPU + FPS)",
+        "mangohud_extended": "Étendu (+ temp. & mémoire)",
+        "mangohud_full": "Complet (tout afficher)",
         "enable_prefix": "Activer",
         "disable_prefix": "Désactiver"
       }
@@ -184,6 +209,12 @@
         "steam_deck": "Steam-Deck-Modus",
         "proton_log": "Proton Log",
         "mangohud": "MangoHud",
+        "mangohud_config": "MangoHud Overlay-Stufe",
+        "mangohud_no_display": "Deaktiviert",
+        "mangohud_fps_only": "Minimal (nur FPS)",
+        "mangohud_medium": "Mittel (CPU/GPU + FPS)",
+        "mangohud_extended": "Erweitert (+ Temp. & Speicher)",
+        "mangohud_full": "Vollständig (alles anzeigen)",
         "enable_prefix": "Aktivieren",
         "disable_prefix": "Deaktivieren"
       }
@@ -224,6 +255,12 @@
         "steam_deck": "Modo Steam Deck",
         "proton_log": "Log Proton",
         "mangohud": "MangoHud",
+        "mangohud_config": "Nivel de overlay MangoHud",
+        "mangohud_no_display": "Desactivado",
+        "mangohud_fps_only": "Mínimo (solo FPS)",
+        "mangohud_medium": "Medio (CPU/GPU + FPS)",
+        "mangohud_extended": "Extendido (+ temp. & mem.)",
+        "mangohud_full": "Completo (mostrar todo)",
         "enable_prefix": "Activar",
         "disable_prefix": "Desactivar"
       }
@@ -264,6 +301,12 @@
         "steam_deck": "Modalità Steam Deck",
         "proton_log": "Log Proton",
         "mangohud": "MangoHud",
+        "mangohud_config": "Livello overlay MangoHud",
+        "mangohud_no_display": "Disattivato",
+        "mangohud_fps_only": "Minimale (solo FPS)",
+        "mangohud_medium": "Medio (CPU/GPU + FPS)",
+        "mangohud_extended": "Esteso (+ temp. & mem.)",
+        "mangohud_full": "Completo (mostra tutto)",
         "enable_prefix": "Attiva",
         "disable_prefix": "Disattiva"
       }
@@ -304,6 +347,12 @@
         "steam_deck": "Steam Deckモード",
         "proton_log": "Protonログ",
         "mangohud": "MangoHud",
+        "mangohud_config": "MangoHudオーバーレイレベル",
+        "mangohud_no_display": "無効",
+        "mangohud_fps_only": "最小（FPSのみ）",
+        "mangohud_medium": "中（CPU/GPU + FPS）",
+        "mangohud_extended": "拡張（＋温度＆メモリ）",
+        "mangohud_full": "フル（全て表示）",
         "enable_prefix": "有効化",
         "disable_prefix": "無効化"
       }
@@ -344,6 +393,12 @@
         "steam_deck": "Steam Deck 모드",
         "proton_log": "Proton 로그",
         "mangohud": "MangoHud",
+        "mangohud_config": "MangoHud 오버레이 수준",
+        "mangohud_no_display": "비활성화",
+        "mangohud_fps_only": "최소 (FPS만)",
+        "mangohud_medium": "중간 (CPU/GPU + FPS)",
+        "mangohud_extended": "확장 (+ 온도 & 메모리)",
+        "mangohud_full": "전체 (모두 표시)",
         "enable_prefix": "활성화",
         "disable_prefix": "비활성화"
       }
@@ -384,6 +439,12 @@
         "steam_deck": "Steam Deck-modus",
         "proton_log": "Proton Log",
         "mangohud": "MangoHud",
+        "mangohud_config": "MangoHud overlay-niveau",
+        "mangohud_no_display": "Uitgeschakeld",
+        "mangohud_fps_only": "Minimaal (alleen FPS)",
+        "mangohud_medium": "Gemiddeld (CPU/GPU + FPS)",
+        "mangohud_extended": "Uitgebreid (+ temp. & geheugen)",
+        "mangohud_full": "Volledig (alles weergeven)",
         "enable_prefix": "Inschakelen",
         "disable_prefix": "Uitschakelen"
       }
@@ -424,6 +485,12 @@
         "steam_deck": "Tryb Steam Deck",
         "proton_log": "Proton Log",
         "mangohud": "MangoHud",
+        "mangohud_config": "Poziom nakładki MangoHud",
+        "mangohud_no_display": "Wyłączone",
+        "mangohud_fps_only": "Minimalne (tylko FPS)",
+        "mangohud_medium": "Średnie (CPU/GPU + FPS)",
+        "mangohud_extended": "Rozszerzone (+ temp. & pamięć)",
+        "mangohud_full": "Pełne (pokaż wszystko)",
         "enable_prefix": "Włącz",
         "disable_prefix": "Wyłącz"
       }
@@ -464,6 +531,12 @@
         "steam_deck": "Modo Steam Deck",
         "proton_log": "Proton Log",
         "mangohud": "MangoHud",
+        "mangohud_config": "Nível de overlay MangoHud",
+        "mangohud_no_display": "Desativado",
+        "mangohud_fps_only": "Mínimo (somente FPS)",
+        "mangohud_medium": "Médio (CPU/GPU + FPS)",
+        "mangohud_extended": "Estendido (+ temp. & mem.)",
+        "mangohud_full": "Completo (mostrar tudo)",
         "enable_prefix": "Ativar",
         "disable_prefix": "Desativar"
       }
@@ -504,6 +577,12 @@
         "steam_deck": "Modo Steam Deck",
         "proton_log": "Proton Log",
         "mangohud": "MangoHud",
+        "mangohud_config": "Nível de overlay MangoHud",
+        "mangohud_no_display": "Desativado",
+        "mangohud_fps_only": "Mínimo (apenas FPS)",
+        "mangohud_medium": "Médio (CPU/GPU + FPS)",
+        "mangohud_extended": "Estendido (+ temp. & mem.)",
+        "mangohud_full": "Completo (mostrar tudo)",
         "enable_prefix": "Ativar",
         "disable_prefix": "Desativar"
       }
@@ -544,6 +623,12 @@
         "steam_deck": "Режим Steam Deck",
         "proton_log": "Proton Log",
         "mangohud": "MangoHud",
+        "mangohud_config": "Уровень оверлея MangoHud",
+        "mangohud_no_display": "Отключено",
+        "mangohud_fps_only": "Минимальный (только FPS)",
+        "mangohud_medium": "Средний (CPU/GPU + FPS)",
+        "mangohud_extended": "Расширенный (+ темп. & память)",
+        "mangohud_full": "Полный (показать всё)",
         "enable_prefix": "Включить",
         "disable_prefix": "Отключить"
       }
@@ -584,6 +669,12 @@
         "steam_deck": "Steam Deck Modu",
         "proton_log": "Proton Log",
         "mangohud": "MangoHud",
+        "mangohud_config": "MangoHud Katman Seviyesi",
+        "mangohud_no_display": "Devre Dışı",
+        "mangohud_fps_only": "Minimal (sadece FPS)",
+        "mangohud_medium": "Orta (CPU/GPU + FPS)",
+        "mangohud_extended": "Genişletilmiş (+ sıcaklık & bellek)",
+        "mangohud_full": "Tam (hepsini göster)",
         "enable_prefix": "Etkinleştir",
         "disable_prefix": "Devre Dışı Bırak"
       }
@@ -624,6 +715,12 @@
         "steam_deck": "Режим Steam Deck",
         "proton_log": "Proton Log",
         "mangohud": "MangoHud",
+        "mangohud_config": "Рівень оверлею MangoHud",
+        "mangohud_no_display": "Вимкнено",
+        "mangohud_fps_only": "Мінімальний (тільки FPS)",
+        "mangohud_medium": "Середній (CPU/GPU + FPS)",
+        "mangohud_extended": "Розширений (+ темп. & пам'ять)",
+        "mangohud_full": "Повний (показати все)",
         "enable_prefix": "Увімкнути",
         "disable_prefix": "Вимкнути"
       }
@@ -664,6 +761,12 @@
         "steam_deck": "Steam Deck 模式",
         "proton_log": "Proton 日志",
         "mangohud": "MangoHud",
+        "mangohud_config": "MangoHud叠加层级别",
+        "mangohud_no_display": "禁用",
+        "mangohud_fps_only": "最小（仅FPS）",
+        "mangohud_medium": "中等（CPU/GPU + FPS）",
+        "mangohud_extended": "扩展（+ 温度 & 内存）",
+        "mangohud_full": "完整（显示全部）",
         "enable_prefix": "启用",
         "disable_prefix": "禁用"
       }
