@@ -37,6 +37,14 @@
       ]
     },
     {
+      "category": "wrappers_exec",
+      "variables": [
+        { "title": "lsfg", "env": "__LSFG", "type": "exec", "exec": "~/lsfg" },
+        { "title": "lsfg_vk_experimental", "env": "__LSFG_VK_EXPERIMENTAL", "type": "exec", "exec": "~/.local/bin/lsfg-vk-experimental" },
+        { "title": "fgmod", "env": "__FGMOD", "type": "exec", "exec": "~/fgmod/fgmod" }
+      ]
+    },
+    {
       "category": "performance",
       "variables": [
         { "title": "dxvk_async", "env": "DXVK_ASYNC", "type": "bool", "value": "1" },
@@ -107,10 +115,12 @@
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
         "amd_commands": "AMD",
-        "wrappers": "Wrappers"
+        "wrappers": "Wrappers",
+        "wrappers_exec": "Wrappers"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
+        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "fsr4_upgrade": "FSR4 Upgrade",
         "fsr4_rdna3_upgrade": "FSR4 RDNA3 Upgrade",
@@ -158,10 +168,12 @@
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
         "amd_commands": "AMD",
-        "wrappers": "Wrappers"
+        "wrappers": "Wrappers",
+        "wrappers_exec": "Wrappers"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
+        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "fsr4_upgrade": "FSR4 Upgrade",
         "fsr4_rdna3_upgrade": "FSR4 RDNA3 Upgrade",
@@ -209,10 +221,12 @@
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
         "amd_commands": "AMD",
-        "wrappers": "Wrapper"
+        "wrappers": "Wrapper",
+        "wrappers_exec": "Wrapper"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
+        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "fsr4_upgrade": "FSR4 Upgrade",
         "fsr4_rdna3_upgrade": "FSR4 RDNA3 Upgrade",
@@ -260,10 +274,12 @@
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
         "amd_commands": "AMD",
-        "wrappers": "Wrappers"
+        "wrappers": "Wrappers",
+        "wrappers_exec": "Wrappers"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
+        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "fsr4_upgrade": "FSR4 Upgrade",
         "fsr4_rdna3_upgrade": "FSR4 RDNA3 Upgrade",
@@ -311,10 +327,12 @@
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
         "amd_commands": "AMD",
-        "wrappers": "Wrapper"
+        "wrappers": "Wrapper",
+        "wrappers_exec": "Wrapper"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
+        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "fsr4_upgrade": "FSR4 Upgrade",
         "fsr4_rdna3_upgrade": "FSR4 RDNA3 Upgrade",
@@ -362,10 +380,12 @@
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
         "amd_commands": "AMD",
-        "wrappers": "ラッパー"
+        "wrappers": "ラッパー",
+        "wrappers_exec": "ラッパー"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
+        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "fsr4_upgrade": "FSR4アップグレード",
         "fsr4_rdna3_upgrade": "FSR4 RDNA3アップグレード",
@@ -413,10 +433,12 @@
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
         "amd_commands": "AMD",
-        "wrappers": "래퍼"
+        "wrappers": "래퍼",
+        "wrappers_exec": "래퍼"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
+        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "fsr4_upgrade": "FSR4 업그레이드",
         "fsr4_rdna3_upgrade": "FSR4 RDNA3 업그레이드",
@@ -464,10 +486,12 @@
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
         "amd_commands": "AMD",
-        "wrappers": "Wrappers"
+        "wrappers": "Wrappers",
+        "wrappers_exec": "Wrappers"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
+        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "fsr4_upgrade": "FSR4 Upgrade",
         "fsr4_rdna3_upgrade": "FSR4 RDNA3 Upgrade",
@@ -515,10 +539,12 @@
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
         "amd_commands": "AMD",
-        "wrappers": "Wrappery"
+        "wrappers": "Wrappery",
+        "wrappers_exec": "Wrappery"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
+        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "fsr4_upgrade": "FSR4 Upgrade",
         "fsr4_rdna3_upgrade": "FSR4 RDNA3 Upgrade",
@@ -566,10 +592,12 @@
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
         "amd_commands": "AMD",
-        "wrappers": "Wrappers"
+        "wrappers": "Wrappers",
+        "wrappers_exec": "Wrappers"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
+        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "fsr4_upgrade": "FSR4 Upgrade",
         "fsr4_rdna3_upgrade": "FSR4 RDNA3 Upgrade",
@@ -617,10 +645,12 @@
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
         "amd_commands": "AMD",
-        "wrappers": "Wrappers"
+        "wrappers": "Wrappers",
+        "wrappers_exec": "Wrappers"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
+        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "fsr4_upgrade": "FSR4 Upgrade",
         "fsr4_rdna3_upgrade": "FSR4 RDNA3 Upgrade",
@@ -668,10 +698,12 @@
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
         "amd_commands": "AMD",
-        "wrappers": "Обёртки"
+        "wrappers": "Обёртки",
+        "wrappers_exec": "Обёртки"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
+        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "fsr4_upgrade": "FSR4 Upgrade",
         "fsr4_rdna3_upgrade": "FSR4 RDNA3 Upgrade",
@@ -719,10 +751,12 @@
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
         "amd_commands": "AMD",
-        "wrappers": "Sarmalayıcılar"
+        "wrappers": "Sarmalayıcılar",
+        "wrappers_exec": "Sarmalayıcılar"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
+        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "fsr4_upgrade": "FSR4 Upgrade",
         "fsr4_rdna3_upgrade": "FSR4 RDNA3 Upgrade",
@@ -770,10 +804,12 @@
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
         "amd_commands": "AMD",
-        "wrappers": "Обгортки"
+        "wrappers": "Обгортки",
+        "wrappers_exec": "Обгортки"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
+        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "fsr4_upgrade": "FSR4 Upgrade",
         "fsr4_rdna3_upgrade": "FSR4 RDNA3 Upgrade",
@@ -821,10 +857,12 @@
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
         "amd_commands": "AMD",
-        "wrappers": "包装器"
+        "wrappers": "包装器",
+        "wrappers_exec": "包装器"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
+        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "fsr4_upgrade": "FSR4 升级",
         "fsr4_rdna3_upgrade": "FSR4 RDNA3 升级",
