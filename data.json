@@ -3,62 +3,534 @@
     {
       "category": "nvidia_commands",
       "variables": [
-        { "title": "dlss4_upgrade", "env": "PROTON_DLSS4_UPGRADE", "type": "bool", "value": "1" },
-        { "title": "dlss_indicator", "env": "PROTON_DLSS_INDICATOR", "type": "bool", "value": "1" },
-        { "title": "smooth_motion", "env": "NVPRESENT_ENABLE_SMOOTH_MOTION", "type": "bool", "value": "1" }
-      ]
+        {
+          "title": "dlss4_upgrade",
+          "env": "PROTON_DLSS4_UPGRADE",
+          "type": "bool",
+          "value": "1"
+        },
+        {
+          "title": "dlss_indicator",
+          "env": "PROTON_DLSS_INDICATOR",
+          "type": "bool",
+          "value": "1"
+        },
+        {
+          "title": "smooth_motion",
+          "env": "NVPRESENT_ENABLE_SMOOTH_MOTION",
+          "type": "bool",
+          "value": "1"
+        }
+      ],
+      "subCategory": {
+        "title": "nvidia_commands_driver",
+        "description": "nvidia_commands_driver_description",
+        "variables": [
+          {
+            "title": "ngx_updater",
+            "env": "PROTON_ENABLE_NGX_UPDATER",
+            "type": "bool",
+            "value": "1"
+          },
+          {
+            "title": "dxvk_sr_override",
+            "env": "DXVK_NVAPI_DRS_NGX_DLSS_SR_OVERRIDE",
+            "type": "enum",
+            "multiSelect": false,
+            "defaultValue": "default",
+            "values": [
+              {
+                "title": "disable_prefix",
+                "value": "off"
+              },
+              {
+                "title": "enable_prefix",
+                "value": "on"
+              },
+              {
+                "title": "preset_default",
+                "value": "default"
+              }
+            ],
+            "subGroup": [
+              {
+                "title": "dxvk_sr_preset",
+                "env": "DXVK_NVAPI_DRS_NGX_DLSS_SR_OVERRIDE_RENDER_PRESET_SELECTION",
+                "type": "enum",
+                "multiSelect": false,
+                "defaultValue": "default",
+                "values": [
+                  {
+                    "title": "preset_off",
+                    "value": "off"
+                  },
+                  {
+                    "title": "preset_default",
+                    "value": "default"
+                  },
+                  {
+                    "title": "preset_latest",
+                    "value": "render_preset_latest"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "A"
+                    },
+                    "value": "render_preset_a"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "B"
+                    },
+                    "value": "render_preset_b"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "C"
+                    },
+                    "value": "render_preset_c"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "D"
+                    },
+                    "value": "render_preset_d"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "E"
+                    },
+                    "value": "render_preset_e"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "F"
+                    },
+                    "value": "render_preset_f"
+                  },
+                  {
+                    "title": "preset_transformer",
+                    "titleParams": {
+                      "letter": "J"
+                    },
+                    "value": "render_preset_j"
+                  },
+                  {
+                    "title": "preset_transformer",
+                    "titleParams": {
+                      "letter": "K"
+                    },
+                    "value": "render_preset_k"
+                  },
+                  {
+                    "title": "preset_transformer",
+                    "titleParams": {
+                      "letter": "L"
+                    },
+                    "value": "render_preset_l"
+                  },
+                  {
+                    "title": "preset_transformer",
+                    "titleParams": {
+                      "letter": "M"
+                    },
+                    "value": "render_preset_m"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "dxvk_rr_override",
+            "env": "DXVK_NVAPI_DRS_NGX_DLSS_RR_OVERRIDE",
+            "type": "enum",
+            "multiSelect": false,
+            "defaultValue": "default",
+            "values": [
+              {
+                "title": "disable_prefix",
+                "value": "off"
+              },
+              {
+                "title": "enable_prefix",
+                "value": "on"
+              },
+              {
+                "title": "preset_default",
+                "value": "default"
+              }
+            ],
+            "subGroup": [
+              {
+                "title": "dxvk_rr_preset",
+                "env": "DXVK_NVAPI_DRS_NGX_DLSS_RR_OVERRIDE_RENDER_PRESET_SELECTION",
+                "type": "enum",
+                "multiSelect": false,
+                "defaultValue": "default",
+                "values": [
+                  {
+                    "title": "preset_off",
+                    "value": "off"
+                  },
+                  {
+                    "title": "preset_default",
+                    "value": "default"
+                  },
+                  {
+                    "title": "preset_latest",
+                    "value": "render_preset_latest"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "A"
+                    },
+                    "value": "render_preset_a"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "B"
+                    },
+                    "value": "render_preset_b"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "C"
+                    },
+                    "value": "render_preset_c"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "D"
+                    },
+                    "value": "render_preset_d"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "E"
+                    },
+                    "value": "render_preset_e"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "F"
+                    },
+                    "value": "render_preset_f"
+                  },
+                  {
+                    "title": "preset_transformer",
+                    "titleParams": {
+                      "letter": "J"
+                    },
+                    "value": "render_preset_j"
+                  },
+                  {
+                    "title": "preset_transformer",
+                    "titleParams": {
+                      "letter": "K"
+                    },
+                    "value": "render_preset_k"
+                  },
+                  {
+                    "title": "preset_transformer",
+                    "titleParams": {
+                      "letter": "L"
+                    },
+                    "value": "render_preset_l"
+                  },
+                  {
+                    "title": "preset_transformer",
+                    "titleParams": {
+                      "letter": "M"
+                    },
+                    "value": "render_preset_m"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "dxvk_fg_override",
+            "env": "DXVK_NVAPI_DRS_NGX_DLSS_FG_OVERRIDE",
+            "type": "enum",
+            "multiSelect": false,
+            "defaultValue": "default",
+            "values": [
+              {
+                "title": "disable_prefix",
+                "value": "off"
+              },
+              {
+                "title": "enable_prefix",
+                "value": "on"
+              },
+              {
+                "title": "preset_default",
+                "value": "default"
+              }
+            ],
+            "subGroup": [
+              {
+                "title": "dxvk_fg_preset",
+                "env": "DXVK_NVAPI_DRS_NGX_DLSS_FG_OVERRIDE_RENDER_PRESET_SELECTION",
+                "type": "enum",
+                "multiSelect": false,
+                "defaultValue": "default",
+                "values": [
+                  {
+                    "title": "preset_off",
+                    "value": "off"
+                  },
+                  {
+                    "title": "preset_default",
+                    "value": "default"
+                  },
+                  {
+                    "title": "preset_latest",
+                    "value": "render_preset_latest"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "A"
+                    },
+                    "value": "render_preset_a"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "B"
+                    },
+                    "value": "render_preset_b"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "C"
+                    },
+                    "value": "render_preset_c"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "D"
+                    },
+                    "value": "render_preset_d"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "E"
+                    },
+                    "value": "render_preset_e"
+                  },
+                  {
+                    "title": "preset_cnn",
+                    "titleParams": {
+                      "letter": "F"
+                    },
+                    "value": "render_preset_f"
+                  },
+                  {
+                    "title": "preset_transformer",
+                    "titleParams": {
+                      "letter": "J"
+                    },
+                    "value": "render_preset_j"
+                  },
+                  {
+                    "title": "preset_transformer",
+                    "titleParams": {
+                      "letter": "K"
+                    },
+                    "value": "render_preset_k"
+                  },
+                  {
+                    "title": "preset_transformer",
+                    "titleParams": {
+                      "letter": "L"
+                    },
+                    "value": "render_preset_l"
+                  },
+                  {
+                    "title": "preset_transformer",
+                    "titleParams": {
+                      "letter": "M"
+                    },
+                    "value": "render_preset_m"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "dxvk_vkreflex",
+            "env": "DXVK_NVAPI_VKREFLEX",
+            "type": "bool",
+            "value": "1"
+          },
+          {
+            "title": "ngx_indicator",
+            "env": "__NGX_SHOW_INDICATOR",
+            "type": "bool",
+            "value": "1024",
+            "simple": true
+          },
+          {
+            "title": "ngx_debug_indicator",
+            "env": "DXVK_NVAPI_SET_NGX_DEBUG_OPTIONS",
+            "type": "bool",
+            "value": "DLSSIndicator=1024,DLSSGIndicator=2",
+            "simple": true
+          }
+        ]
+      }
     },
     {
       "category": "amd_commands",
       "variables": [
-        { "title": "fsr4_upgrade", "env": "PROTON_FSR4_UPGRADE", "type": "bool", "value": "1" },
-        { "title": "fsr4_rdna3_upgrade", "env": "PROTON_FSR4_RDNA3_UPGRADE", "type": "bool", "value": "1" },
-        { "title": "fsr_indicator", "env": "PROTON_FSR4_INDICATOR", "type": "bool", "value": "1" }
+        {
+          "title": "fsr4_upgrade",
+          "env": "PROTON_FSR4_UPGRADE",
+          "type": "bool",
+          "value": "1"
+        },
+        {
+          "title": "fsr4_rdna3_upgrade",
+          "env": "PROTON_FSR4_RDNA3_UPGRADE",
+          "type": "bool",
+          "value": "1"
+        },
+        {
+          "title": "fsr_indicator",
+          "env": "PROTON_FSR4_INDICATOR",
+          "type": "bool",
+          "value": "1"
+        }
       ]
     },
     {
       "category": "intel_commands",
       "variables": [
-        { "title": "xess_upgrade", "env": "PROTON_XESS_UPGRADE", "type": "bool", "value": "1" },
-        { "title": "xess_indicator", "env": "PROTON_XESS_INDICATOR", "type": "bool", "value": "1" }
+        {
+          "title": "xess_upgrade",
+          "env": "PROTON_XESS_UPGRADE",
+          "type": "bool",
+          "value": "1"
+        },
+        {
+          "title": "xess_indicator",
+          "env": "PROTON_XESS_INDICATOR",
+          "type": "bool",
+          "value": "1"
+        }
       ]
     },
     {
       "category": "upscale",
       "variables": [
-        { "title": "optiscaler", "env": "PROTON_USE_OPTISCALER", "type": "bool", "value": "1" }
+        {
+          "title": "optiscaler",
+          "env": "PROTON_USE_OPTISCALER",
+          "type": "bool",
+          "value": "1"
+        }
       ]
     },
     {
       "category": "wrappers",
       "variables": [
-        { "title": "lsfg", "env": "__LSFG", "type": "bool", "value": "1", "simple": true },
-        { "title": "fgmod", "env": "__FGMOD", "type": "bool", "value": "1", "simple": true }
+        {
+          "title": "lsfg",
+          "env": "__LSFG",
+          "type": "bool",
+          "value": "1",
+          "simple": true
+        },
+        {
+          "title": "fgmod",
+          "env": "__FGMOD",
+          "type": "bool",
+          "value": "1",
+          "simple": true
+        }
       ]
     },
     {
       "category": "wrappers_exec",
       "variables": [
-        { "title": "lsfg", "env": "__LSFG", "type": "exec", "exec": "~/lsfg" },
-        { "title": "lsfg_vk_experimental", "env": "__LSFG_VK_EXPERIMENTAL", "type": "exec", "exec": "~/.local/bin/lsfg-vk-experimental" },
-        { "title": "fgmod", "env": "__FGMOD", "type": "exec", "exec": "~/fgmod/fgmod" }
+        {
+          "title": "lsfg",
+          "env": "__LSFG",
+          "type": "exec",
+          "exec": "~/lsfg"
+        },
+        {
+          "title": "lsfg_vk_experimental",
+          "env": "__LSFG_VK_EXPERIMENTAL",
+          "type": "exec",
+          "exec": "~/.local/bin/lsfg-vk-experimental"
+        },
+        {
+          "title": "fgmod",
+          "env": "__FGMOD",
+          "type": "exec",
+          "exec": "~/fgmod/fgmod"
+        }
       ]
     },
     {
       "category": "performance",
       "variables": [
-        { "title": "dxvk_async", "env": "DXVK_ASYNC", "type": "bool", "value": "1" },
-        { "title": "ntsync", "env": "PROTON_USE_NTSYNC", "type": "bool", "value": "1" },
-        { "title": "dxvk_low_latency", "env": "PROTON_DXVK_LOWLATENCY", "type": "bool", "value": "1" },
-        { "title": "low_latency_layer", "env": "LOW_LATENCY_LAYER", "type": "bool", "value": "1" },
+        {
+          "title": "dxvk_async",
+          "env": "DXVK_ASYNC",
+          "type": "bool",
+          "value": "1"
+        },
+        {
+          "title": "ntsync",
+          "env": "PROTON_USE_NTSYNC",
+          "type": "bool",
+          "value": "1"
+        },
+        {
+          "title": "dxvk_low_latency",
+          "env": "PROTON_DXVK_LOWLATENCY",
+          "type": "bool",
+          "value": "1"
+        },
+        {
+          "title": "low_latency_layer",
+          "env": "LOW_LATENCY_LAYER",
+          "type": "bool",
+          "value": "1"
+        },
         {
           "title": "radv_perftest",
           "env": "RADV_PERFTEST",
           "type": "enum",
           "defaultValue": "aco",
           "values": [
-            { "title": "radv_perftest_aco", "value": "aco" },
-            { "title": "radv_perftest_gpl", "value": "gpl" }
+            {
+              "title": "radv_perftest_aco",
+              "value": "aco"
+            },
+            {
+              "title": "radv_perftest_gpl",
+              "value": "gpl"
+            }
           ]
         }
       ]
@@ -66,40 +538,103 @@
     {
       "category": "compatibility",
       "variables": [
-        { "title": "wined3d", "env": "PROTON_USE_WINED3D", "type": "bool", "value": "1" },
-        { "title": "nvidia_gpu_masking", "env": "PROTON_HIDE_NVIDIA_GPU", "type": "bool", "value": "1" },
-        { "title": "nvapi", "env": "PROTON_ENABLE_NVAPI", "type": "bool", "value": "1" },
-        { "title": "hdr_wsi", "env": "ENABLE_HDR_WSI", "type": "bool", "value": "1" },
-        { "title": "hdr", "env": "PROTON_ENABLE_HDR", "type": "bool", "value": "1" },
-        { "title": "vkd3d_heap", "env": "PROTON_VKD3D_HEAP", "type": "bool", "value": "1" },
+        {
+          "title": "wined3d",
+          "env": "PROTON_USE_WINED3D",
+          "type": "bool",
+          "value": "1"
+        },
+        {
+          "title": "nvidia_gpu_masking",
+          "env": "PROTON_HIDE_NVIDIA_GPU",
+          "type": "bool",
+          "value": "1"
+        },
+        {
+          "title": "nvapi",
+          "env": "PROTON_ENABLE_NVAPI",
+          "type": "bool",
+          "value": "1"
+        },
+        {
+          "title": "hdr_wsi",
+          "env": "ENABLE_HDR_WSI",
+          "type": "bool",
+          "value": "1"
+        },
+        {
+          "title": "hdr",
+          "env": "PROTON_ENABLE_HDR",
+          "type": "bool",
+          "value": "1"
+        },
+        {
+          "title": "vkd3d_heap",
+          "env": "PROTON_VKD3D_HEAP",
+          "type": "bool",
+          "value": "1"
+        },
         {
           "title": "vkd3d_config",
           "env": "VKD3D_CONFIG",
           "type": "enum",
           "defaultValue": "descriptor_heap",
           "values": [
-            { "title": "vkd3d_descriptor_heap", "value": "descriptor_heap" }
+            {
+              "title": "vkd3d_descriptor_heap",
+              "value": "descriptor_heap"
+            }
           ]
         },
-        { "title": "steam_deck", "env": "SteamDeck", "type": "bool", "value": "0" }
+        {
+          "title": "steam_deck",
+          "env": "SteamDeck",
+          "type": "bool",
+          "value": "0"
+        }
       ]
     },
     {
       "category": "debug",
       "variables": [
-        { "title": "proton_log", "env": "PROTON_LOG", "type": "bool", "value": "1" },
-        { "title": "mangohud", "env": "MANGOHUD", "type": "bool", "value": "1" },
+        {
+          "title": "proton_log",
+          "env": "PROTON_LOG",
+          "type": "bool",
+          "value": "1"
+        },
+        {
+          "title": "mangohud",
+          "env": "MANGOHUD",
+          "type": "bool",
+          "value": "1"
+        },
         {
           "title": "mangohud_config",
           "env": "MANGOHUD_CONFIG",
           "type": "enum",
           "defaultValue": "fps_only=1",
           "values": [
-            { "title": "mangohud_no_display", "value": "no_display" },
-            { "title": "mangohud_fps_only", "value": "fps_only=1" },
-            { "title": "mangohud_medium", "value": "cpu_stats,gpu_stats,fps,frametime" },
-            { "title": "mangohud_extended", "value": "cpu_stats,gpu_stats,fps,frametime,cpu_temp,gpu_temp,vram,ram,gpu_power" },
-            { "title": "mangohud_full", "value": "full" }
+            {
+              "title": "mangohud_no_display",
+              "value": "no_display"
+            },
+            {
+              "title": "mangohud_fps_only",
+              "value": "fps_only=1"
+            },
+            {
+              "title": "mangohud_medium",
+              "value": "cpu_stats,gpu_stats,fps,frametime"
+            },
+            {
+              "title": "mangohud_extended",
+              "value": "cpu_stats,gpu_stats,fps,frametime,cpu_temp,gpu_temp,vram,ram,gpu_power"
+            },
+            {
+              "title": "mangohud_full",
+              "value": "full"
+            }
           ]
         }
       ]
@@ -114,9 +649,13 @@
         "debug": "Debug",
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
+        "nvidia_commands_driver": "NVIDIA (Driver)",
         "amd_commands": "AMD",
         "wrappers": "Wrappers",
         "wrappers_exec": "Wrappers"
+      },
+      "descriptions": {
+        "nvidia_commands_driver_description": "Official NVIDIA driver variables from NVIDIA's gaming documentation. Unlike the entries above, they work with any Proton build."
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
@@ -130,6 +669,20 @@
         "xess_upgrade": "XeSS Upgrade",
         "xess_indicator": "XeSS Indicator",
         "smooth_motion": "Enable Smooth Motion",
+        "ngx_updater": "Use Latest DLSS DLL",
+        "dxvk_sr_override": "DLSS Super Resolution Override",
+        "dxvk_rr_override": "DLSS Ray Reconstruction Override",
+        "dxvk_fg_override": "DLSS Frame Generation Override",
+        "dxvk_sr_preset": "DLSS SR Preset",
+        "preset_off": "Off",
+        "preset_default": "Default",
+        "preset_latest": "Latest (Recommended)",
+        "preset_cnn": "Preset {{letter}} (CNN)",
+        "preset_transformer": "Preset {{letter}} (Transformer)",
+        "dxvk_rr_preset": "DLSS RR Preset",
+        "dxvk_vkreflex": "NVIDIA Reflex (Vulkan)",
+        "ngx_indicator": "DLSS Indicator (Native)",
+        "ngx_debug_indicator": "DLSS/DLSSG Debug Indicator",
         "dxvk_async": "DXVK Async",
         "ntsync": "NTSync",
         "dxvk_low_latency": "DXVK Low Latency",
@@ -156,7 +709,9 @@
         "mangohud_extended": "Extended (+ temps & memory)",
         "mangohud_full": "Full (show everything)",
         "enable_prefix": "Enable",
-        "disable_prefix": "Disable"
+        "disable_prefix": "Disable",
+        "dxvk_fg_preset": "DLSS FG Preset",
+        "conflict_warning": "May conflict with {{names}} — consider disabling it"
       }
     },
     "fr-FR": {
@@ -167,9 +722,13 @@
         "debug": "Debug",
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
+        "nvidia_commands_driver": "NVIDIA (Pilote)",
         "amd_commands": "AMD",
         "wrappers": "Wrappers",
         "wrappers_exec": "Wrappers"
+      },
+      "descriptions": {
+        "nvidia_commands_driver_description": "Variables officielles du pilote NVIDIA, issues de la documentation gaming NVIDIA. Contrairement aux entrées ci-dessus, elles fonctionnent avec n'importe quel Proton."
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
@@ -183,6 +742,20 @@
         "xess_upgrade": "XeSS Upgrade",
         "xess_indicator": "Indicateur XeSS",
         "smooth_motion": "Activer Smooth Motion",
+        "ngx_updater": "Utiliser la dernière DLL DLSS",
+        "dxvk_sr_override": "Override DLSS Super Resolution",
+        "dxvk_rr_override": "Override DLSS Ray Reconstruction",
+        "dxvk_fg_override": "Override DLSS Frame Generation",
+        "dxvk_sr_preset": "Preset DLSS SR",
+        "preset_off": "Désactivé",
+        "preset_default": "Défaut",
+        "preset_latest": "Dernier (recommandé)",
+        "preset_cnn": "Preset {{letter}} (CNN)",
+        "preset_transformer": "Preset {{letter}} (Transformer)",
+        "dxvk_rr_preset": "Preset DLSS RR",
+        "dxvk_vkreflex": "NVIDIA Reflex (Vulkan)",
+        "ngx_indicator": "Indicateur DLSS (Natif)",
+        "ngx_debug_indicator": "Indicateur Debug DLSS/DLSSG",
         "dxvk_async": "DXVK Async",
         "ntsync": "NTSync",
         "dxvk_low_latency": "DXVK Faible Latence",
@@ -209,7 +782,9 @@
         "mangohud_extended": "Étendu (+ temp. & mémoire)",
         "mangohud_full": "Complet (tout afficher)",
         "enable_prefix": "Activer",
-        "disable_prefix": "Désactiver"
+        "disable_prefix": "Désactiver",
+        "dxvk_fg_preset": "Preset DLSS FG",
+        "conflict_warning": "Peut entrer en conflit avec {{names}} — envisage de le désactiver"
       }
     },
     "de-DE": {
@@ -220,9 +795,13 @@
         "debug": "Debug",
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
+        "nvidia_commands_driver": "NVIDIA (Treiber)",
         "amd_commands": "AMD",
         "wrappers": "Wrapper",
         "wrappers_exec": "Wrapper"
+      },
+      "descriptions": {
+        "nvidia_commands_driver_description": "Offizielle NVIDIA-Treibervariablen aus der NVIDIA-Gaming-Dokumentation. Im Gegensatz zu den obigen Einträgen funktionieren sie mit jedem Proton."
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
@@ -236,6 +815,20 @@
         "xess_upgrade": "XeSS Upgrade",
         "xess_indicator": "XeSS-Anzeige",
         "smooth_motion": "Smooth Motion aktivieren",
+        "ngx_updater": "Neueste DLSS-DLL verwenden",
+        "dxvk_sr_override": "DLSS Super Resolution Überschreibung",
+        "dxvk_rr_override": "DLSS Ray Reconstruction Überschreibung",
+        "dxvk_fg_override": "DLSS Frame Generation Überschreibung",
+        "dxvk_sr_preset": "DLSS SR Preset",
+        "preset_off": "Aus",
+        "preset_default": "Standard",
+        "preset_latest": "Neuestes (empfohlen)",
+        "preset_cnn": "Preset {{letter}} (CNN)",
+        "preset_transformer": "Preset {{letter}} (Transformer)",
+        "dxvk_rr_preset": "DLSS RR Preset",
+        "dxvk_vkreflex": "NVIDIA Reflex (Vulkan)",
+        "ngx_indicator": "DLSS-Anzeige (Nativ)",
+        "ngx_debug_indicator": "DLSS/DLSSG Debug-Anzeige",
         "dxvk_async": "DXVK Async",
         "ntsync": "NTSync",
         "dxvk_low_latency": "DXVK Niedrige Latenz",
@@ -262,7 +855,9 @@
         "mangohud_extended": "Erweitert (+ Temp. & Speicher)",
         "mangohud_full": "Vollständig (alles anzeigen)",
         "enable_prefix": "Aktivieren",
-        "disable_prefix": "Deaktivieren"
+        "disable_prefix": "Deaktivieren",
+        "dxvk_fg_preset": "DLSS FG Preset",
+        "conflict_warning": "Kann mit {{names}} in Konflikt stehen — erwäge, es zu deaktivieren"
       }
     },
     "es-ES": {
@@ -273,9 +868,13 @@
         "debug": "Depuración",
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
+        "nvidia_commands_driver": "NVIDIA (Controlador)",
         "amd_commands": "AMD",
         "wrappers": "Wrappers",
         "wrappers_exec": "Wrappers"
+      },
+      "descriptions": {
+        "nvidia_commands_driver_description": "Variables oficiales del controlador NVIDIA, de la documentación gaming de NVIDIA. A diferencia de las entradas anteriores, funcionan con cualquier Proton."
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
@@ -289,6 +888,20 @@
         "xess_upgrade": "XeSS Upgrade",
         "xess_indicator": "Indicador XeSS",
         "smooth_motion": "Activar Smooth Motion",
+        "ngx_updater": "Usar la última DLL DLSS",
+        "dxvk_sr_override": "Anulación DLSS Super Resolution",
+        "dxvk_rr_override": "Anulación DLSS Ray Reconstruction",
+        "dxvk_fg_override": "Anulación DLSS Frame Generation",
+        "dxvk_sr_preset": "Preset DLSS SR",
+        "preset_off": "Desactivado",
+        "preset_default": "Predeterminado",
+        "preset_latest": "Más reciente (recomendado)",
+        "preset_cnn": "Preset {{letter}} (CNN)",
+        "preset_transformer": "Preset {{letter}} (Transformer)",
+        "dxvk_rr_preset": "Preset DLSS RR",
+        "dxvk_vkreflex": "NVIDIA Reflex (Vulkan)",
+        "ngx_indicator": "Indicador DLSS (Nativo)",
+        "ngx_debug_indicator": "Indicador Debug DLSS/DLSSG",
         "dxvk_async": "DXVK Async",
         "ntsync": "NTSync",
         "dxvk_low_latency": "DXVK Baja Latencia",
@@ -315,7 +928,9 @@
         "mangohud_extended": "Extendido (+ temp. & mem.)",
         "mangohud_full": "Completo (mostrar todo)",
         "enable_prefix": "Activar",
-        "disable_prefix": "Desactivar"
+        "disable_prefix": "Desactivar",
+        "dxvk_fg_preset": "Preset DLSS FG",
+        "conflict_warning": "Puede entrar en conflicto con {{names}} — considera desactivarlo"
       }
     },
     "it-IT": {
@@ -326,9 +941,13 @@
         "debug": "Debug",
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
+        "nvidia_commands_driver": "NVIDIA (Driver)",
         "amd_commands": "AMD",
         "wrappers": "Wrapper",
         "wrappers_exec": "Wrapper"
+      },
+      "descriptions": {
+        "nvidia_commands_driver_description": "Variabili ufficiali del driver NVIDIA, dalla documentazione gaming di NVIDIA. A differenza delle voci sopra, funzionano con qualsiasi Proton."
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
@@ -342,6 +961,20 @@
         "xess_upgrade": "XeSS Upgrade",
         "xess_indicator": "Indicatore XeSS",
         "smooth_motion": "Abilita Smooth Motion",
+        "ngx_updater": "Usa l'ultima DLL DLSS",
+        "dxvk_sr_override": "Override DLSS Super Resolution",
+        "dxvk_rr_override": "Override DLSS Ray Reconstruction",
+        "dxvk_fg_override": "Override DLSS Frame Generation",
+        "dxvk_sr_preset": "Preset DLSS SR",
+        "preset_off": "Disattivato",
+        "preset_default": "Predefinito",
+        "preset_latest": "Più recente (consigliato)",
+        "preset_cnn": "Preset {{letter}} (CNN)",
+        "preset_transformer": "Preset {{letter}} (Transformer)",
+        "dxvk_rr_preset": "Preset DLSS RR",
+        "dxvk_vkreflex": "NVIDIA Reflex (Vulkan)",
+        "ngx_indicator": "Indicatore DLSS (Nativo)",
+        "ngx_debug_indicator": "Indicatore Debug DLSS/DLSSG",
         "dxvk_async": "DXVK Async",
         "ntsync": "NTSync",
         "dxvk_low_latency": "DXVK Bassa Latenza",
@@ -368,7 +1001,9 @@
         "mangohud_extended": "Esteso (+ temp. & mem.)",
         "mangohud_full": "Completo (mostra tutto)",
         "enable_prefix": "Attiva",
-        "disable_prefix": "Disattiva"
+        "disable_prefix": "Disattiva",
+        "dxvk_fg_preset": "Preset DLSS FG",
+        "conflict_warning": "Potrebbe entrare in conflitto con {{names}} — valuta di disattivarlo"
       }
     },
     "ja-JP": {
@@ -379,9 +1014,13 @@
         "debug": "デバッグ",
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
+        "nvidia_commands_driver": "NVIDIA（ドライバー）",
         "amd_commands": "AMD",
         "wrappers": "ラッパー",
         "wrappers_exec": "ラッパー"
+      },
+      "descriptions": {
+        "nvidia_commands_driver_description": "NVIDIAのゲーミングドキュメントに基づく公式ドライバー変数。上記の項目とは異なり、どのProtonでも動作します。"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
@@ -395,6 +1034,20 @@
         "xess_upgrade": "XeSSアップグレード",
         "xess_indicator": "XeSSインジケーター",
         "smooth_motion": "Smooth Motion有効化",
+        "ngx_updater": "最新のDLSS DLLを使用",
+        "dxvk_sr_override": "DLSS Super Resolution オーバーライド",
+        "dxvk_rr_override": "DLSS Ray Reconstruction オーバーライド",
+        "dxvk_fg_override": "DLSS Frame Generation オーバーライド",
+        "dxvk_sr_preset": "DLSS SR プリセット",
+        "preset_off": "オフ",
+        "preset_default": "デフォルト",
+        "preset_latest": "最新（推奨）",
+        "preset_cnn": "プリセット {{letter}}（CNN）",
+        "preset_transformer": "プリセット {{letter}}（Transformer）",
+        "dxvk_rr_preset": "DLSS RR プリセット",
+        "dxvk_vkreflex": "NVIDIA Reflex (Vulkan)",
+        "ngx_indicator": "DLSSインジケーター（ネイティブ）",
+        "ngx_debug_indicator": "DLSS/DLSSG デバッグインジケーター",
         "dxvk_async": "DXVK非同期",
         "ntsync": "NTSync",
         "dxvk_low_latency": "DXVK 低遅延",
@@ -421,7 +1074,9 @@
         "mangohud_extended": "拡張（＋温度＆メモリ）",
         "mangohud_full": "フル（全て表示）",
         "enable_prefix": "有効化",
-        "disable_prefix": "無効化"
+        "disable_prefix": "無効化",
+        "dxvk_fg_preset": "DLSS FG プリセット",
+        "conflict_warning": "{{names}} と競合する可能性があります — 無効にすることを検討してください"
       }
     },
     "ko-KR": {
@@ -432,9 +1087,13 @@
         "debug": "디버그",
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
+        "nvidia_commands_driver": "NVIDIA (드라이버)",
         "amd_commands": "AMD",
         "wrappers": "래퍼",
         "wrappers_exec": "래퍼"
+      },
+      "descriptions": {
+        "nvidia_commands_driver_description": "NVIDIA 게이밍 문서에 기반한 공식 드라이버 변수입니다. 위 항목과 달리 모든 Proton에서 작동합니다."
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
@@ -448,6 +1107,20 @@
         "xess_upgrade": "XeSS 업그레이드",
         "xess_indicator": "XeSS 표시기",
         "smooth_motion": "Smooth Motion 활성화",
+        "ngx_updater": "최신 DLSS DLL 사용",
+        "dxvk_sr_override": "DLSS Super Resolution 재정의",
+        "dxvk_rr_override": "DLSS Ray Reconstruction 재정의",
+        "dxvk_fg_override": "DLSS Frame Generation 재정의",
+        "dxvk_sr_preset": "DLSS SR 프리셋",
+        "preset_off": "끄기",
+        "preset_default": "기본값",
+        "preset_latest": "최신 (권장)",
+        "preset_cnn": "프리셋 {{letter}} (CNN)",
+        "preset_transformer": "프리셋 {{letter}} (Transformer)",
+        "dxvk_rr_preset": "DLSS RR 프리셋",
+        "dxvk_vkreflex": "NVIDIA Reflex (Vulkan)",
+        "ngx_indicator": "DLSS 표시기 (네이티브)",
+        "ngx_debug_indicator": "DLSS/DLSSG 디버그 표시기",
         "dxvk_async": "DXVK 비동기",
         "ntsync": "NTSync",
         "dxvk_low_latency": "DXVK 저지연",
@@ -474,7 +1147,9 @@
         "mangohud_extended": "확장 (+ 온도 & 메모리)",
         "mangohud_full": "전체 (모두 표시)",
         "enable_prefix": "활성화",
-        "disable_prefix": "비활성화"
+        "disable_prefix": "비활성화",
+        "dxvk_fg_preset": "DLSS FG 프리셋",
+        "conflict_warning": "{{names}}와(과) 충돌할 수 있습니다 — 비활성화를 고려하세요"
       }
     },
     "nl-NL": {
@@ -485,9 +1160,13 @@
         "debug": "Debug",
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
+        "nvidia_commands_driver": "NVIDIA (Driver)",
         "amd_commands": "AMD",
         "wrappers": "Wrappers",
         "wrappers_exec": "Wrappers"
+      },
+      "descriptions": {
+        "nvidia_commands_driver_description": "Officiële NVIDIA-drivervariabelen uit de NVIDIA gaming-documentatie. In tegenstelling tot de bovenstaande items werken deze met elke Proton."
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
@@ -501,6 +1180,20 @@
         "xess_upgrade": "XeSS Upgrade",
         "xess_indicator": "XeSS-indicator",
         "smooth_motion": "Smooth Motion inschakelen",
+        "ngx_updater": "Nieuwste DLSS-DLL gebruiken",
+        "dxvk_sr_override": "DLSS Super Resolution Overschrijving",
+        "dxvk_rr_override": "DLSS Ray Reconstruction Overschrijving",
+        "dxvk_fg_override": "DLSS Frame Generation Overschrijving",
+        "dxvk_sr_preset": "DLSS SR Preset",
+        "preset_off": "Uit",
+        "preset_default": "Standaard",
+        "preset_latest": "Nieuwste (aanbevolen)",
+        "preset_cnn": "Preset {{letter}} (CNN)",
+        "preset_transformer": "Preset {{letter}} (Transformer)",
+        "dxvk_rr_preset": "DLSS RR Preset",
+        "dxvk_vkreflex": "NVIDIA Reflex (Vulkan)",
+        "ngx_indicator": "DLSS-indicator (Native)",
+        "ngx_debug_indicator": "DLSS/DLSSG Debug-indicator",
         "dxvk_async": "DXVK Async",
         "ntsync": "NTSync",
         "dxvk_low_latency": "DXVK Lage Latentie",
@@ -527,7 +1220,9 @@
         "mangohud_extended": "Uitgebreid (+ temp. & geheugen)",
         "mangohud_full": "Volledig (alles weergeven)",
         "enable_prefix": "Inschakelen",
-        "disable_prefix": "Uitschakelen"
+        "disable_prefix": "Uitschakelen",
+        "dxvk_fg_preset": "DLSS FG Preset",
+        "conflict_warning": "Kan conflicteren met {{names}} — overweeg dit uit te schakelen"
       }
     },
     "pl-PL": {
@@ -538,9 +1233,13 @@
         "debug": "Debug",
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
+        "nvidia_commands_driver": "NVIDIA (Sterownik)",
         "amd_commands": "AMD",
         "wrappers": "Wrappery",
         "wrappers_exec": "Wrappery"
+      },
+      "descriptions": {
+        "nvidia_commands_driver_description": "Oficjalne zmienne sterownika NVIDIA z dokumentacji gamingowej NVIDIA. W przeciwieństwie do powyższych wpisów działają z dowolnym Protonem."
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
@@ -554,6 +1253,20 @@
         "xess_upgrade": "XeSS Upgrade",
         "xess_indicator": "Wskaźnik XeSS",
         "smooth_motion": "Włącz Smooth Motion",
+        "ngx_updater": "Użyj najnowszej DLL DLSS",
+        "dxvk_sr_override": "Nadpisanie DLSS Super Resolution",
+        "dxvk_rr_override": "Nadpisanie DLSS Ray Reconstruction",
+        "dxvk_fg_override": "Nadpisanie DLSS Frame Generation",
+        "dxvk_sr_preset": "Preset DLSS SR",
+        "preset_off": "Wyłączone",
+        "preset_default": "Domyślny",
+        "preset_latest": "Najnowszy (zalecany)",
+        "preset_cnn": "Preset {{letter}} (CNN)",
+        "preset_transformer": "Preset {{letter}} (Transformer)",
+        "dxvk_rr_preset": "Preset DLSS RR",
+        "dxvk_vkreflex": "NVIDIA Reflex (Vulkan)",
+        "ngx_indicator": "Wskaźnik DLSS (Natywny)",
+        "ngx_debug_indicator": "Wskaźnik Debug DLSS/DLSSG",
         "dxvk_async": "DXVK Async",
         "ntsync": "NTSync",
         "dxvk_low_latency": "DXVK Niska Latencja",
@@ -580,7 +1293,9 @@
         "mangohud_extended": "Rozszerzone (+ temp. & pamięć)",
         "mangohud_full": "Pełne (pokaż wszystko)",
         "enable_prefix": "Włącz",
-        "disable_prefix": "Wyłącz"
+        "disable_prefix": "Wyłącz",
+        "dxvk_fg_preset": "Preset DLSS FG",
+        "conflict_warning": "Może kolidować z {{names}} — rozważ jego wyłączenie"
       }
     },
     "pt-BR": {
@@ -591,9 +1306,13 @@
         "debug": "Debug",
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
+        "nvidia_commands_driver": "NVIDIA (Driver)",
         "amd_commands": "AMD",
         "wrappers": "Wrappers",
         "wrappers_exec": "Wrappers"
+      },
+      "descriptions": {
+        "nvidia_commands_driver_description": "Variáveis oficiais do driver NVIDIA, da documentação gaming da NVIDIA. Ao contrário das entradas acima, funcionam com qualquer Proton."
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
@@ -607,6 +1326,20 @@
         "xess_upgrade": "XeSS Upgrade",
         "xess_indicator": "Indicador XeSS",
         "smooth_motion": "Ativar Smooth Motion",
+        "ngx_updater": "Usar a DLL DLSS mais recente",
+        "dxvk_sr_override": "Substituição DLSS Super Resolution",
+        "dxvk_rr_override": "Substituição DLSS Ray Reconstruction",
+        "dxvk_fg_override": "Substituição DLSS Frame Generation",
+        "dxvk_sr_preset": "Preset DLSS SR",
+        "preset_off": "Desativado",
+        "preset_default": "Padrão",
+        "preset_latest": "Mais recente (recomendado)",
+        "preset_cnn": "Preset {{letter}} (CNN)",
+        "preset_transformer": "Preset {{letter}} (Transformer)",
+        "dxvk_rr_preset": "Preset DLSS RR",
+        "dxvk_vkreflex": "NVIDIA Reflex (Vulkan)",
+        "ngx_indicator": "Indicador DLSS (Nativo)",
+        "ngx_debug_indicator": "Indicador Debug DLSS/DLSSG",
         "dxvk_async": "DXVK Async",
         "ntsync": "NTSync",
         "dxvk_low_latency": "DXVK Baixa Latência",
@@ -633,7 +1366,9 @@
         "mangohud_extended": "Estendido (+ temp. & mem.)",
         "mangohud_full": "Completo (mostrar tudo)",
         "enable_prefix": "Ativar",
-        "disable_prefix": "Desativar"
+        "disable_prefix": "Desativar",
+        "dxvk_fg_preset": "Preset DLSS FG",
+        "conflict_warning": "Pode conflitar com {{names}} — considere desativá-lo"
       }
     },
     "pt-PT": {
@@ -644,9 +1379,13 @@
         "debug": "Debug",
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
+        "nvidia_commands_driver": "NVIDIA (Controlador)",
         "amd_commands": "AMD",
         "wrappers": "Wrappers",
         "wrappers_exec": "Wrappers"
+      },
+      "descriptions": {
+        "nvidia_commands_driver_description": "Variáveis oficiais do controlador NVIDIA, da documentação gaming da NVIDIA. Ao contrário das entradas acima, funcionam com qualquer Proton."
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
@@ -660,6 +1399,20 @@
         "xess_upgrade": "XeSS Upgrade",
         "xess_indicator": "Indicador XeSS",
         "smooth_motion": "Ativar Smooth Motion",
+        "ngx_updater": "Usar a DLL DLSS mais recente",
+        "dxvk_sr_override": "Substituição DLSS Super Resolution",
+        "dxvk_rr_override": "Substituição DLSS Ray Reconstruction",
+        "dxvk_fg_override": "Substituição DLSS Frame Generation",
+        "dxvk_sr_preset": "Preset DLSS SR",
+        "preset_off": "Desativado",
+        "preset_default": "Padrão",
+        "preset_latest": "Mais recente (recomendado)",
+        "preset_cnn": "Preset {{letter}} (CNN)",
+        "preset_transformer": "Preset {{letter}} (Transformer)",
+        "dxvk_rr_preset": "Preset DLSS RR",
+        "dxvk_vkreflex": "NVIDIA Reflex (Vulkan)",
+        "ngx_indicator": "Indicador DLSS (Nativo)",
+        "ngx_debug_indicator": "Indicador Debug DLSS/DLSSG",
         "dxvk_async": "DXVK Async",
         "ntsync": "NTSync",
         "dxvk_low_latency": "DXVK Baixa Latência",
@@ -686,7 +1439,9 @@
         "mangohud_extended": "Estendido (+ temp. & mem.)",
         "mangohud_full": "Completo (mostrar tudo)",
         "enable_prefix": "Ativar",
-        "disable_prefix": "Desativar"
+        "disable_prefix": "Desativar",
+        "dxvk_fg_preset": "Preset DLSS FG",
+        "conflict_warning": "Pode entrar em conflito com {{names}} — considera desativá-lo"
       }
     },
     "ru-RU": {
@@ -697,9 +1452,13 @@
         "debug": "Отладка",
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
+        "nvidia_commands_driver": "NVIDIA (Драйвер)",
         "amd_commands": "AMD",
         "wrappers": "Обёртки",
         "wrappers_exec": "Обёртки"
+      },
+      "descriptions": {
+        "nvidia_commands_driver_description": "Официальные переменные драйвера NVIDIA из игровой документации NVIDIA. В отличие от записей выше, они работают с любым Proton."
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
@@ -713,6 +1472,20 @@
         "xess_upgrade": "XeSS Upgrade",
         "xess_indicator": "Индикатор XeSS",
         "smooth_motion": "Включить Smooth Motion",
+        "ngx_updater": "Использовать последнюю DLL DLSS",
+        "dxvk_sr_override": "Переопределение DLSS Super Resolution",
+        "dxvk_rr_override": "Переопределение DLSS Ray Reconstruction",
+        "dxvk_fg_override": "Переопределение DLSS Frame Generation",
+        "dxvk_sr_preset": "Пресет DLSS SR",
+        "preset_off": "Выключено",
+        "preset_default": "По умолчанию",
+        "preset_latest": "Последний (рекомендуется)",
+        "preset_cnn": "Пресет {{letter}} (CNN)",
+        "preset_transformer": "Пресет {{letter}} (Transformer)",
+        "dxvk_rr_preset": "Пресет DLSS RR",
+        "dxvk_vkreflex": "NVIDIA Reflex (Vulkan)",
+        "ngx_indicator": "Индикатор DLSS (Нативный)",
+        "ngx_debug_indicator": "Отладочный Индикатор DLSS/DLSSG",
         "dxvk_async": "DXVK Async",
         "ntsync": "NTSync",
         "dxvk_low_latency": "DXVK Низкая Задержка",
@@ -739,7 +1512,9 @@
         "mangohud_extended": "Расширенный (+ темп. & память)",
         "mangohud_full": "Полный (показать всё)",
         "enable_prefix": "Включить",
-        "disable_prefix": "Отключить"
+        "disable_prefix": "Отключить",
+        "dxvk_fg_preset": "Пресет DLSS FG",
+        "conflict_warning": "Может конфликтовать с {{names}} — рассмотрите возможность отключения"
       }
     },
     "tr-TR": {
@@ -750,9 +1525,13 @@
         "debug": "Hata Ayıklama",
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
+        "nvidia_commands_driver": "NVIDIA (Sürücü)",
         "amd_commands": "AMD",
         "wrappers": "Sarmalayıcılar",
         "wrappers_exec": "Sarmalayıcılar"
+      },
+      "descriptions": {
+        "nvidia_commands_driver_description": "NVIDIA'nın oyun belgelerinden resmi sürücü değişkenleri. Yukarıdaki girişlerin aksine, herhangi bir Proton ile çalışırlar."
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
@@ -766,6 +1545,20 @@
         "xess_upgrade": "XeSS Upgrade",
         "xess_indicator": "XeSS Göstergesi",
         "smooth_motion": "Smooth Motion Etkinleştir",
+        "ngx_updater": "En Son DLSS DLL'sini Kullan",
+        "dxvk_sr_override": "DLSS Super Resolution Geçersiz Kılma",
+        "dxvk_rr_override": "DLSS Ray Reconstruction Geçersiz Kılma",
+        "dxvk_fg_override": "DLSS Frame Generation Geçersiz Kılma",
+        "dxvk_sr_preset": "DLSS SR Ön Ayarı",
+        "preset_off": "Kapalı",
+        "preset_default": "Varsayılan",
+        "preset_latest": "En Son (Önerilen)",
+        "preset_cnn": "Preset {{letter}} (CNN)",
+        "preset_transformer": "Preset {{letter}} (Transformer)",
+        "dxvk_rr_preset": "DLSS RR Ön Ayarı",
+        "dxvk_vkreflex": "NVIDIA Reflex (Vulkan)",
+        "ngx_indicator": "DLSS Göstergesi (Yerel)",
+        "ngx_debug_indicator": "DLSS/DLSSG Hata Ayıklama Göstergesi",
         "dxvk_async": "DXVK Async",
         "ntsync": "NTSync",
         "dxvk_low_latency": "DXVK Düşük Gecikme",
@@ -792,7 +1585,9 @@
         "mangohud_extended": "Genişletilmiş (+ sıcaklık & bellek)",
         "mangohud_full": "Tam (hepsini göster)",
         "enable_prefix": "Etkinleştir",
-        "disable_prefix": "Devre Dışı Bırak"
+        "disable_prefix": "Devre Dışı Bırak",
+        "dxvk_fg_preset": "DLSS FG Ön Ayarı",
+        "conflict_warning": "{{names}} ile çakışabilir — devre dışı bırakmayı düşünün"
       }
     },
     "uk-UA": {
@@ -803,9 +1598,13 @@
         "debug": "Налагодження",
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
+        "nvidia_commands_driver": "NVIDIA (Драйвер)",
         "amd_commands": "AMD",
         "wrappers": "Обгортки",
         "wrappers_exec": "Обгортки"
+      },
+      "descriptions": {
+        "nvidia_commands_driver_description": "Офіційні змінні драйвера NVIDIA з ігрової документації NVIDIA. На відміну від записів вище, вони працюють з будь-яким Proton."
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
@@ -819,6 +1618,20 @@
         "xess_upgrade": "XeSS Upgrade",
         "xess_indicator": "Індикатор XeSS",
         "smooth_motion": "Увімкнути Smooth Motion",
+        "ngx_updater": "Використовувати останню DLL DLSS",
+        "dxvk_sr_override": "Перевизначення DLSS Super Resolution",
+        "dxvk_rr_override": "Перевизначення DLSS Ray Reconstruction",
+        "dxvk_fg_override": "Перевизначення DLSS Frame Generation",
+        "dxvk_sr_preset": "Пресет DLSS SR",
+        "preset_off": "Вимкнено",
+        "preset_default": "За замовчуванням",
+        "preset_latest": "Останній (рекомендовано)",
+        "preset_cnn": "Пресет {{letter}} (CNN)",
+        "preset_transformer": "Пресет {{letter}} (Transformer)",
+        "dxvk_rr_preset": "Пресет DLSS RR",
+        "dxvk_vkreflex": "NVIDIA Reflex (Vulkan)",
+        "ngx_indicator": "Індикатор DLSS (Нативний)",
+        "ngx_debug_indicator": "Індикатор Налагодження DLSS/DLSSG",
         "dxvk_async": "DXVK Async",
         "ntsync": "NTSync",
         "dxvk_low_latency": "DXVK Низька Затримка",
@@ -845,7 +1658,9 @@
         "mangohud_extended": "Розширений (+ темп. & пам'ять)",
         "mangohud_full": "Повний (показати все)",
         "enable_prefix": "Увімкнути",
-        "disable_prefix": "Вимкнути"
+        "disable_prefix": "Вимкнути",
+        "dxvk_fg_preset": "Пресет DLSS FG",
+        "conflict_warning": "Може конфліктувати з {{names}} — розгляньте можливість вимкнення"
       }
     },
     "zh-CN": {
@@ -856,9 +1671,13 @@
         "debug": "调试",
         "intel_commands": "Intel",
         "nvidia_commands": "NVIDIA",
+        "nvidia_commands_driver": "NVIDIA（驱动）",
         "amd_commands": "AMD",
         "wrappers": "包装器",
         "wrappers_exec": "包装器"
+      },
+      "descriptions": {
+        "nvidia_commands_driver_description": "来自 NVIDIA 游戏文档的官方驱动变量。与上面的条目不同，它们适用于任何 Proton。"
       },
       "variables": {
         "lsfg": "LSFG (~/lsfg)",
@@ -872,6 +1691,20 @@
         "xess_upgrade": "XeSS 升级",
         "xess_indicator": "XeSS 指示器",
         "smooth_motion": "启用 Smooth Motion",
+        "ngx_updater": "使用最新 DLSS DLL",
+        "dxvk_sr_override": "DLSS Super Resolution 覆盖",
+        "dxvk_rr_override": "DLSS Ray Reconstruction 覆盖",
+        "dxvk_fg_override": "DLSS Frame Generation 覆盖",
+        "dxvk_sr_preset": "DLSS SR 预设",
+        "preset_off": "关闭",
+        "preset_default": "默认",
+        "preset_latest": "最新（推荐）",
+        "preset_cnn": "预设 {{letter}}（CNN）",
+        "preset_transformer": "预设 {{letter}}（Transformer）",
+        "dxvk_rr_preset": "DLSS RR 预设",
+        "dxvk_vkreflex": "NVIDIA Reflex (Vulkan)",
+        "ngx_indicator": "DLSS 指示器（原生）",
+        "ngx_debug_indicator": "DLSS/DLSSG 调试指示器",
         "dxvk_async": "DXVK 异步",
         "ntsync": "NTSync",
         "dxvk_low_latency": "DXVK 低延迟",
@@ -898,8 +1731,36 @@
         "mangohud_extended": "扩展（+ 温度 & 内存）",
         "mangohud_full": "完整（显示全部）",
         "enable_prefix": "启用",
-        "disable_prefix": "禁用"
+        "disable_prefix": "禁用",
+        "dxvk_fg_preset": "DLSS FG 预设",
+        "conflict_warning": "可能与 {{names}} 冲突——建议将其禁用"
       }
     }
-  }
+  },
+  "conflictGroups": [
+    {
+      "trigger": "PROTON_ENABLE_NGX_UPDATER",
+      "conflicts": [
+        "PROTON_DLSS4_UPGRADE"
+      ]
+    },
+    {
+      "trigger": "PROTON_USE_WINED3D",
+      "conflicts": [
+        "DXVK_ASYNC",
+        "PROTON_DXVK_LOWLATENCY",
+        "PROTON_DLSS4_UPGRADE",
+        "PROTON_DLSS_INDICATOR",
+        "NVPRESENT_ENABLE_SMOOTH_MOTION",
+        "PROTON_ENABLE_NGX_UPDATER",
+        "DXVK_NVAPI_DRS_NGX_DLSS_SR_OVERRIDE",
+        "DXVK_NVAPI_DRS_NGX_DLSS_RR_OVERRIDE",
+        "DXVK_NVAPI_DRS_NGX_DLSS_FG_OVERRIDE",
+        "DXVK_NVAPI_VKREFLEX",
+        "__NGX_SHOW_INDICATOR",
+        "DXVK_NVAPI_SET_NGX_DEBUG_OPTIONS",
+        "PROTON_ENABLE_NVAPI"
+      ]
+    }
+  ]
 }
