@@ -494,12 +494,6 @@
       "category": "performance",
       "variables": [
         {
-          "title": "dxvk_async",
-          "env": "DXVK_ASYNC",
-          "type": "bool",
-          "value": "1"
-        },
-        {
           "title": "ntsync",
           "env": "PROTON_USE_NTSYNC",
           "type": "bool",
@@ -533,7 +527,178 @@
             }
           ]
         }
-      ]
+      ],
+      "subCategory": {
+        "title": "performance_dxvk",
+        "variables": [
+          {
+            "title": "dxvk_async",
+            "env": "DXVK_ASYNC",
+            "type": "bool",
+            "value": "1"
+          },
+          {
+            "title": "dxvk_config",
+            "env": "DXVK_CONFIG",
+            "type": "compound",
+            "separator": ";",
+            "flags": [
+              {
+                "title": "dxgi.syncInterval",
+                "value": "dxgi.syncInterval",
+                "companion": {
+                  "kind": "number",
+                  "defaultValue": "-1"
+                }
+              },
+              {
+                "title": "dxgi.maxFrameRate",
+                "value": "dxgi.maxFrameRate",
+                "companion": {
+                  "kind": "number",
+                  "defaultValue": "0"
+                }
+              },
+              {
+                "title": "d3d9.maxFrameRate",
+                "value": "d3d9.maxFrameRate",
+                "companion": {
+                  "kind": "number",
+                  "defaultValue": "0"
+                }
+              },
+              {
+                "title": "d3d9.presentInterval",
+                "value": "d3d9.presentInterval",
+                "companion": {
+                  "kind": "number",
+                  "defaultValue": "-1"
+                }
+              },
+              {
+                "title": "dxvk.hud",
+                "value": "dxvk.hud",
+                "companion": {
+                  "kind": "text",
+                  "defaultValue": ""
+                }
+              },
+              {
+                "title": "dxvk.tearFree",
+                "value": "dxvk.tearFree",
+                "companion": {
+                  "kind": "enum",
+                  "options": [
+                    {
+                      "title": "Auto",
+                      "value": "Auto"
+                    },
+                    {
+                      "title": "True",
+                      "value": "True"
+                    },
+                    {
+                      "title": "False",
+                      "value": "False"
+                    }
+                  ],
+                  "defaultValue": "Auto"
+                }
+              },
+              {
+                "title": "d3d11.maxFeatureLevel",
+                "value": "d3d11.maxFeatureLevel",
+                "companion": {
+                  "kind": "enum",
+                  "options": [
+                    {
+                      "title": "12_1",
+                      "value": "12_1"
+                    },
+                    {
+                      "title": "12_0",
+                      "value": "12_0"
+                    },
+                    {
+                      "title": "11_1",
+                      "value": "11_1"
+                    },
+                    {
+                      "title": "11_0",
+                      "value": "11_0"
+                    },
+                    {
+                      "title": "10_1",
+                      "value": "10_1"
+                    },
+                    {
+                      "title": "10_0",
+                      "value": "10_0"
+                    }
+                  ],
+                  "defaultValue": "12_1"
+                }
+              },
+              {
+                "title": "dxvk.numCompilerThreads",
+                "value": "dxvk.numCompilerThreads",
+                "companion": {
+                  "kind": "number",
+                  "defaultValue": "0"
+                }
+              },
+              {
+                "title": "dxvk.enableGraphicsPipelineLibrary",
+                "value": "dxvk.enableGraphicsPipelineLibrary",
+                "companion": {
+                  "kind": "enum",
+                  "options": [
+                    {
+                      "title": "Auto",
+                      "value": "Auto"
+                    },
+                    {
+                      "title": "True",
+                      "value": "True"
+                    },
+                    {
+                      "title": "False",
+                      "value": "False"
+                    }
+                  ],
+                  "defaultValue": "Auto"
+                }
+              },
+              {
+                "title": "dxgi.maxFrameLatency",
+                "value": "dxgi.maxFrameLatency",
+                "companion": {
+                  "kind": "number",
+                  "defaultValue": "0"
+                }
+              },
+              {
+                "title": "dxvk.allowFse",
+                "value": "dxvk.allowFse",
+                "companion": {
+                  "kind": "enum",
+                  "options": [
+                    {
+                      "title": "True",
+                      "value": "True"
+                    },
+                    {
+                      "title": "False",
+                      "value": "False"
+                    }
+                  ],
+                  "defaultValue": "False"
+                }
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "category": "compatibility",
@@ -584,13 +749,296 @@
           "title": "vkd3d_config",
           "env": "VKD3D_CONFIG",
           "type": "enum",
-          "defaultValue": "descriptor_heap",
+          "defaultValue": "no_upload_hvv",
           "values": [
             {
-              "title": "vkd3d_descriptor_heap",
+              "title": "vk_debug",
+              "value": "vk_debug"
+            },
+            {
+              "title": "skip_application_workarounds",
+              "value": "skip_application_workarounds"
+            },
+            {
+              "title": "debug_utils",
+              "value": "debug_utils"
+            },
+            {
+              "title": "force_static_cbv",
+              "value": "force_static_cbv"
+            },
+            {
+              "title": "dxr",
+              "value": "dxr"
+            },
+            {
+              "title": "single_queue",
+              "value": "single_queue"
+            },
+            {
+              "title": "descriptor_qa_checks",
+              "value": "descriptor_qa_checks"
+            },
+            {
+              "title": "nodxr",
+              "value": "nodxr"
+            },
+            {
+              "title": "fault",
+              "value": "fault"
+            },
+            {
+              "title": "no_upload_hvv",
+              "value": "no_upload_hvv"
+            },
+            {
+              "title": "log_memory_budget",
+              "value": "log_memory_budget"
+            },
+            {
+              "title": "force_host_cached",
+              "value": "force_host_cached"
+            },
+            {
+              "title": "app_debug_marker_only",
+              "value": "app_debug_marker_only"
+            },
+            {
+              "title": "no_invariant_position",
+              "value": "no_invariant_position"
+            },
+            {
+              "title": "global_pipeline_cache",
+              "value": "global_pipeline_cache"
+            },
+            {
+              "title": "pipeline_library_no_serialize_spirv",
+              "value": "pipeline_library_no_serialize_spirv"
+            },
+            {
+              "title": "pipeline_library_sanitize_spirv",
+              "value": "pipeline_library_sanitize_spirv"
+            },
+            {
+              "title": "pipeline_library_log",
+              "value": "pipeline_library_log"
+            },
+            {
+              "title": "pipeline_library_ignore_spirv",
+              "value": "pipeline_library_ignore_spirv"
+            },
+            {
+              "title": "mutable_single_set",
+              "value": "mutable_single_set"
+            },
+            {
+              "title": "memory_allocator_skip_clear",
+              "value": "memory_allocator_skip_clear"
+            },
+            {
+              "title": "recycle_command_pools",
+              "value": "recycle_command_pools"
+            },
+            {
+              "title": "pipeline_library_ignore_mismatch_driver",
+              "value": "pipeline_library_ignore_mismatch_driver"
+            },
+            {
+              "title": "breadcrumbs",
+              "value": "breadcrumbs"
+            },
+            {
+              "title": "pipeline_library_app_cache",
+              "value": "pipeline_library_app_cache"
+            },
+            {
+              "title": "shader_cache_sync",
+              "value": "shader_cache_sync"
+            },
+            {
+              "title": "force_raw_va_cbv",
+              "value": "force_raw_va_cbv"
+            },
+            {
+              "title": "dxr12",
+              "value": "dxr12"
+            },
+            {
+              "title": "allow_sbt_collection",
+              "value": "allow_sbt_collection"
+            },
+            {
+              "title": "host_import_fallback",
+              "value": "host_import_fallback"
+            },
+            {
+              "title": "preallocate_srv_mip_clamps",
+              "value": "preallocate_srv_mip_clamps"
+            },
+            {
+              "title": "force_initial_transition",
+              "value": "force_initial_transition"
+            },
+            {
+              "title": "disable_simultaneous_uav_compression",
+              "value": "disable_simultaneous_uav_compression"
+            },
+            {
+              "title": "skip_driver_workarounds",
+              "value": "skip_driver_workarounds"
+            },
+            {
+              "title": "retain_psos",
+              "value": "retain_psos"
+            },
+            {
+              "title": "enable_experimental_features",
+              "value": "enable_experimental_features"
+            },
+            {
+              "title": "reject_padded_small_resource_alignment",
+              "value": "reject_padded_small_resource_alignment"
+            },
+            {
+              "title": "disable_uav_compression",
+              "value": "disable_uav_compression"
+            },
+            {
+              "title": "disable_depth_compression",
+              "value": "disable_depth_compression"
+            },
+            {
+              "title": "disable_color_compression",
+              "value": "disable_color_compression"
+            },
+            {
+              "title": "memory_allocator_skip_image_heap_clear",
+              "value": "memory_allocator_skip_image_heap_clear"
+            },
+            {
+              "title": "small_vram_rebar",
+              "value": "small_vram_rebar"
+            },
+            {
+              "title": "no_staggered_submit",
+              "value": "no_staggered_submit"
+            },
+            {
+              "title": "no_clear_uav_sync",
+              "value": "no_clear_uav_sync"
+            },
+            {
+              "title": "force_dynamic_msaa",
+              "value": "force_dynamic_msaa"
+            },
+            {
+              "title": "instruction_qa_checks",
+              "value": "instruction_qa_checks"
+            },
+            {
+              "title": "no_nvx",
+              "value": "no_nvx"
+            },
+            {
+              "title": "no_gpu_upload_heap",
+              "value": "no_gpu_upload_heap"
+            },
+            {
+              "title": "one_time_submit",
+              "value": "one_time_submit"
+            },
+            {
+              "title": "skip_null_sparse_tiles",
+              "value": "skip_null_sparse_tiles"
+            },
+            {
+              "title": "queue_profile_extra",
+              "value": "queue_profile_extra"
+            },
+            {
+              "title": "damage_not_zeroed_allocations",
+              "value": "damage_not_zeroed_allocations"
+            },
+            {
+              "title": "defer_resource_destruction",
+              "value": "defer_resource_destruction"
+            },
+            {
+              "title": "prefer_thin_uav_tiling",
+              "value": "prefer_thin_uav_tiling"
+            },
+            {
+              "title": "descriptor_heap",
               "value": "descriptor_heap"
+            },
+            {
+              "title": "avoid_image_buffer_aliasing",
+              "value": "avoid_image_buffer_aliasing"
+            },
+            {
+              "title": "extra_rtas_sync",
+              "value": "extra_rtas_sync"
+            },
+            {
+              "title": "zero_fill_blp",
+              "value": "zero_fill_blp"
+            },
+            {
+              "title": "rtas_allow_blas_rebuild_sizes",
+              "value": "rtas_allow_blas_rebuild_sizes"
+            },
+            {
+              "title": "disallow_committed_texture_suballocation",
+              "value": "disallow_committed_texture_suballocation"
+            },
+            {
+              "title": "allow_image_heap_suballocation",
+              "value": "allow_image_heap_suballocation"
+            },
+            {
+              "title": "debug_wave64_simulation",
+              "value": "debug_wave64_simulation"
+            }
+          ],
+          "maxVisibleOptions": 5,
+          "showAllSelected": true,
+          "selectedValuesLayout": "stacked"
+        },
+        {
+          "title": "vkd3d_swapchain_present_mode",
+          "env": "VKD3D_SWAPCHAIN_PRESENT_MODE",
+          "type": "enum",
+          "defaultValue": "FIFO",
+          "multiSelect": false,
+          "values": [
+            {
+              "title": "IMMEDIATE",
+              "value": "IMMEDIATE"
+            },
+            {
+              "title": "MAILBOX",
+              "value": "MAILBOX"
+            },
+            {
+              "title": "FIFO",
+              "value": "FIFO"
+            },
+            {
+              "title": "FIFO_RELAXED",
+              "value": "FIFO_RELAXED"
+            },
+            {
+              "title": "FIFO_LATEST_READY",
+              "value": "FIFO_LATEST_READY"
             }
           ]
+        },
+        {
+          "title": "vkd3d_frame_rate",
+          "env": "VKD3D_FRAME_RATE",
+          "type": "value",
+          "valueKind": "number",
+          "defaultValue": "60"
         },
         {
           "title": "steam_deck",
@@ -658,7 +1106,8 @@
         "nvidia_commands_driver": "NVIDIA (Driver)",
         "amd_commands": "AMD",
         "wrappers": "Wrappers",
-        "wrappers_exec": "Wrappers"
+        "wrappers_exec": "Wrappers",
+        "performance_dxvk": "DXVK"
       },
       "descriptions": {
         "nvidia_commands_driver_description": "Official NVIDIA driver variables from NVIDIA's gaming documentation. Unlike the entries above, they work with any Proton build."
@@ -718,7 +1167,15 @@
         "enable_prefix": "Enable",
         "disable_prefix": "Disable",
         "dxvk_fg_preset": "DLSS FG Preset",
-        "conflict_warning": "May conflict with {{names}} — consider disabling it"
+        "conflict_warning": "May conflict with {{names}} — consider disabling it",
+        "shadowed_by_custom_variable": "Overridden by custom variable \"{{name}}\"",
+        "vkd3d_swapchain_present_mode": "Swapchain Present Mode",
+        "vkd3d_frame_rate": "Frame Rate Limit (DX12)",
+        "y_show_raw": "raw names",
+        "y_show_formatted": "formatted names",
+        "n_enabled_one": "{{count}} enabled",
+        "n_enabled_other": "{{count}} enabled",
+        "dxvk_config": "DXVK Config"
       }
     },
     "fr-FR": {
@@ -732,7 +1189,8 @@
         "nvidia_commands_driver": "NVIDIA (Pilote)",
         "amd_commands": "AMD",
         "wrappers": "Wrappers",
-        "wrappers_exec": "Wrappers"
+        "wrappers_exec": "Wrappers",
+        "performance_dxvk": "DXVK"
       },
       "descriptions": {
         "nvidia_commands_driver_description": "Variables officielles du pilote NVIDIA, issues de la documentation gaming NVIDIA. Contrairement aux entrées ci-dessus, elles fonctionnent avec n'importe quel Proton."
@@ -792,7 +1250,15 @@
         "enable_prefix": "Activer",
         "disable_prefix": "Désactiver",
         "dxvk_fg_preset": "Preset DLSS FG",
-        "conflict_warning": "Peut entrer en conflit avec {{names}} — envisage de le désactiver"
+        "conflict_warning": "Peut entrer en conflit avec {{names}} — envisage de le désactiver",
+        "shadowed_by_custom_variable": "Remplacé par la variable personnalisée « {{name}} »",
+        "vkd3d_swapchain_present_mode": "Mode de présentation de la swapchain",
+        "vkd3d_frame_rate": "Limite de fréquence d'images (DX12)",
+        "y_show_raw": "noms bruts",
+        "y_show_formatted": "noms formatés",
+        "n_enabled_one": "{{count}} activé",
+        "n_enabled_other": "{{count}} activés",
+        "dxvk_config": "Configuration DXVK"
       }
     },
     "de-DE": {
@@ -806,7 +1272,8 @@
         "nvidia_commands_driver": "NVIDIA (Treiber)",
         "amd_commands": "AMD",
         "wrappers": "Wrapper",
-        "wrappers_exec": "Wrapper"
+        "wrappers_exec": "Wrapper",
+        "performance_dxvk": "DXVK"
       },
       "descriptions": {
         "nvidia_commands_driver_description": "Offizielle NVIDIA-Treibervariablen aus der NVIDIA-Gaming-Dokumentation. Im Gegensatz zu den obigen Einträgen funktionieren sie mit jedem Proton."
@@ -866,7 +1333,15 @@
         "enable_prefix": "Aktivieren",
         "disable_prefix": "Deaktivieren",
         "dxvk_fg_preset": "DLSS FG Preset",
-        "conflict_warning": "Kann mit {{names}} in Konflikt stehen — erwäge, es zu deaktivieren"
+        "conflict_warning": "Kann mit {{names}} in Konflikt stehen — erwäge, es zu deaktivieren",
+        "shadowed_by_custom_variable": "Overridden by custom variable \"{{name}}\"",
+        "vkd3d_swapchain_present_mode": "Swapchain Present Mode",
+        "vkd3d_frame_rate": "Frame Rate Limit (DX12)",
+        "y_show_raw": "raw names",
+        "y_show_formatted": "formatted names",
+        "n_enabled_one": "{{count}} enabled",
+        "n_enabled_other": "{{count}} enabled",
+        "dxvk_config": "DXVK Config"
       }
     },
     "es-ES": {
@@ -880,7 +1355,8 @@
         "nvidia_commands_driver": "NVIDIA (Controlador)",
         "amd_commands": "AMD",
         "wrappers": "Wrappers",
-        "wrappers_exec": "Wrappers"
+        "wrappers_exec": "Wrappers",
+        "performance_dxvk": "DXVK"
       },
       "descriptions": {
         "nvidia_commands_driver_description": "Variables oficiales del controlador NVIDIA, de la documentación gaming de NVIDIA. A diferencia de las entradas anteriores, funcionan con cualquier Proton."
@@ -940,7 +1416,15 @@
         "enable_prefix": "Activar",
         "disable_prefix": "Desactivar",
         "dxvk_fg_preset": "Preset DLSS FG",
-        "conflict_warning": "Puede entrar en conflicto con {{names}} — considera desactivarlo"
+        "conflict_warning": "Puede entrar en conflicto con {{names}} — considera desactivarlo",
+        "shadowed_by_custom_variable": "Overridden by custom variable \"{{name}}\"",
+        "vkd3d_swapchain_present_mode": "Swapchain Present Mode",
+        "vkd3d_frame_rate": "Frame Rate Limit (DX12)",
+        "y_show_raw": "raw names",
+        "y_show_formatted": "formatted names",
+        "n_enabled_one": "{{count}} enabled",
+        "n_enabled_other": "{{count}} enabled",
+        "dxvk_config": "DXVK Config"
       }
     },
     "it-IT": {
@@ -954,7 +1438,8 @@
         "nvidia_commands_driver": "NVIDIA (Driver)",
         "amd_commands": "AMD",
         "wrappers": "Wrapper",
-        "wrappers_exec": "Wrapper"
+        "wrappers_exec": "Wrapper",
+        "performance_dxvk": "DXVK"
       },
       "descriptions": {
         "nvidia_commands_driver_description": "Variabili ufficiali del driver NVIDIA, dalla documentazione gaming di NVIDIA. A differenza delle voci sopra, funzionano con qualsiasi Proton."
@@ -1014,7 +1499,15 @@
         "enable_prefix": "Attiva",
         "disable_prefix": "Disattiva",
         "dxvk_fg_preset": "Preset DLSS FG",
-        "conflict_warning": "Potrebbe entrare in conflitto con {{names}} — valuta di disattivarlo"
+        "conflict_warning": "Potrebbe entrare in conflitto con {{names}} — valuta di disattivarlo",
+        "shadowed_by_custom_variable": "Overridden by custom variable \"{{name}}\"",
+        "vkd3d_swapchain_present_mode": "Swapchain Present Mode",
+        "vkd3d_frame_rate": "Frame Rate Limit (DX12)",
+        "y_show_raw": "raw names",
+        "y_show_formatted": "formatted names",
+        "n_enabled_one": "{{count}} enabled",
+        "n_enabled_other": "{{count}} enabled",
+        "dxvk_config": "DXVK Config"
       }
     },
     "ja-JP": {
@@ -1028,7 +1521,8 @@
         "nvidia_commands_driver": "NVIDIA（ドライバー）",
         "amd_commands": "AMD",
         "wrappers": "ラッパー",
-        "wrappers_exec": "ラッパー"
+        "wrappers_exec": "ラッパー",
+        "performance_dxvk": "DXVK"
       },
       "descriptions": {
         "nvidia_commands_driver_description": "NVIDIAのゲーミングドキュメントに基づく公式ドライバー変数。上記の項目とは異なり、どのProtonでも動作します。"
@@ -1088,7 +1582,15 @@
         "enable_prefix": "有効化",
         "disable_prefix": "無効化",
         "dxvk_fg_preset": "DLSS FG プリセット",
-        "conflict_warning": "{{names}} と競合する可能性があります — 無効にすることを検討してください"
+        "conflict_warning": "{{names}} と競合する可能性があります — 無効にすることを検討してください",
+        "shadowed_by_custom_variable": "Overridden by custom variable \"{{name}}\"",
+        "vkd3d_swapchain_present_mode": "Swapchain Present Mode",
+        "vkd3d_frame_rate": "Frame Rate Limit (DX12)",
+        "y_show_raw": "raw names",
+        "y_show_formatted": "formatted names",
+        "n_enabled_one": "{{count}} enabled",
+        "n_enabled_other": "{{count}} enabled",
+        "dxvk_config": "DXVK Config"
       }
     },
     "ko-KR": {
@@ -1102,7 +1604,8 @@
         "nvidia_commands_driver": "NVIDIA (드라이버)",
         "amd_commands": "AMD",
         "wrappers": "래퍼",
-        "wrappers_exec": "래퍼"
+        "wrappers_exec": "래퍼",
+        "performance_dxvk": "DXVK"
       },
       "descriptions": {
         "nvidia_commands_driver_description": "NVIDIA 게이밍 문서에 기반한 공식 드라이버 변수입니다. 위 항목과 달리 모든 Proton에서 작동합니다."
@@ -1162,7 +1665,15 @@
         "enable_prefix": "활성화",
         "disable_prefix": "비활성화",
         "dxvk_fg_preset": "DLSS FG 프리셋",
-        "conflict_warning": "{{names}}와(과) 충돌할 수 있습니다 — 비활성화를 고려하세요"
+        "conflict_warning": "{{names}}와(과) 충돌할 수 있습니다 — 비활성화를 고려하세요",
+        "shadowed_by_custom_variable": "Overridden by custom variable \"{{name}}\"",
+        "vkd3d_swapchain_present_mode": "Swapchain Present Mode",
+        "vkd3d_frame_rate": "Frame Rate Limit (DX12)",
+        "y_show_raw": "raw names",
+        "y_show_formatted": "formatted names",
+        "n_enabled_one": "{{count}} enabled",
+        "n_enabled_other": "{{count}} enabled",
+        "dxvk_config": "DXVK Config"
       }
     },
     "nl-NL": {
@@ -1176,7 +1687,8 @@
         "nvidia_commands_driver": "NVIDIA (Driver)",
         "amd_commands": "AMD",
         "wrappers": "Wrappers",
-        "wrappers_exec": "Wrappers"
+        "wrappers_exec": "Wrappers",
+        "performance_dxvk": "DXVK"
       },
       "descriptions": {
         "nvidia_commands_driver_description": "Officiële NVIDIA-drivervariabelen uit de NVIDIA gaming-documentatie. In tegenstelling tot de bovenstaande items werken deze met elke Proton."
@@ -1236,7 +1748,15 @@
         "enable_prefix": "Inschakelen",
         "disable_prefix": "Uitschakelen",
         "dxvk_fg_preset": "DLSS FG Preset",
-        "conflict_warning": "Kan conflicteren met {{names}} — overweeg dit uit te schakelen"
+        "conflict_warning": "Kan conflicteren met {{names}} — overweeg dit uit te schakelen",
+        "shadowed_by_custom_variable": "Overridden by custom variable \"{{name}}\"",
+        "vkd3d_swapchain_present_mode": "Swapchain Present Mode",
+        "vkd3d_frame_rate": "Frame Rate Limit (DX12)",
+        "y_show_raw": "raw names",
+        "y_show_formatted": "formatted names",
+        "n_enabled_one": "{{count}} enabled",
+        "n_enabled_other": "{{count}} enabled",
+        "dxvk_config": "DXVK Config"
       }
     },
     "pl-PL": {
@@ -1250,7 +1770,8 @@
         "nvidia_commands_driver": "NVIDIA (Sterownik)",
         "amd_commands": "AMD",
         "wrappers": "Wrappery",
-        "wrappers_exec": "Wrappery"
+        "wrappers_exec": "Wrappery",
+        "performance_dxvk": "DXVK"
       },
       "descriptions": {
         "nvidia_commands_driver_description": "Oficjalne zmienne sterownika NVIDIA z dokumentacji gamingowej NVIDIA. W przeciwieństwie do powyższych wpisów działają z dowolnym Protonem."
@@ -1310,7 +1831,15 @@
         "enable_prefix": "Włącz",
         "disable_prefix": "Wyłącz",
         "dxvk_fg_preset": "Preset DLSS FG",
-        "conflict_warning": "Może kolidować z {{names}} — rozważ jego wyłączenie"
+        "conflict_warning": "Może kolidować z {{names}} — rozważ jego wyłączenie",
+        "shadowed_by_custom_variable": "Overridden by custom variable \"{{name}}\"",
+        "vkd3d_swapchain_present_mode": "Swapchain Present Mode",
+        "vkd3d_frame_rate": "Frame Rate Limit (DX12)",
+        "y_show_raw": "raw names",
+        "y_show_formatted": "formatted names",
+        "n_enabled_one": "{{count}} enabled",
+        "n_enabled_other": "{{count}} enabled",
+        "dxvk_config": "DXVK Config"
       }
     },
     "pt-BR": {
@@ -1324,7 +1853,8 @@
         "nvidia_commands_driver": "NVIDIA (Driver)",
         "amd_commands": "AMD",
         "wrappers": "Wrappers",
-        "wrappers_exec": "Wrappers"
+        "wrappers_exec": "Wrappers",
+        "performance_dxvk": "DXVK"
       },
       "descriptions": {
         "nvidia_commands_driver_description": "Variáveis oficiais do driver NVIDIA, da documentação gaming da NVIDIA. Ao contrário das entradas acima, funcionam com qualquer Proton."
@@ -1384,7 +1914,15 @@
         "enable_prefix": "Ativar",
         "disable_prefix": "Desativar",
         "dxvk_fg_preset": "Preset DLSS FG",
-        "conflict_warning": "Pode conflitar com {{names}} — considere desativá-lo"
+        "conflict_warning": "Pode conflitar com {{names}} — considere desativá-lo",
+        "shadowed_by_custom_variable": "Overridden by custom variable \"{{name}}\"",
+        "vkd3d_swapchain_present_mode": "Swapchain Present Mode",
+        "vkd3d_frame_rate": "Frame Rate Limit (DX12)",
+        "y_show_raw": "raw names",
+        "y_show_formatted": "formatted names",
+        "n_enabled_one": "{{count}} enabled",
+        "n_enabled_other": "{{count}} enabled",
+        "dxvk_config": "DXVK Config"
       }
     },
     "pt-PT": {
@@ -1398,7 +1936,8 @@
         "nvidia_commands_driver": "NVIDIA (Controlador)",
         "amd_commands": "AMD",
         "wrappers": "Wrappers",
-        "wrappers_exec": "Wrappers"
+        "wrappers_exec": "Wrappers",
+        "performance_dxvk": "DXVK"
       },
       "descriptions": {
         "nvidia_commands_driver_description": "Variáveis oficiais do controlador NVIDIA, da documentação gaming da NVIDIA. Ao contrário das entradas acima, funcionam com qualquer Proton."
@@ -1458,7 +1997,15 @@
         "enable_prefix": "Ativar",
         "disable_prefix": "Desativar",
         "dxvk_fg_preset": "Preset DLSS FG",
-        "conflict_warning": "Pode entrar em conflito com {{names}} — considera desativá-lo"
+        "conflict_warning": "Pode entrar em conflito com {{names}} — considera desativá-lo",
+        "shadowed_by_custom_variable": "Overridden by custom variable \"{{name}}\"",
+        "vkd3d_swapchain_present_mode": "Swapchain Present Mode",
+        "vkd3d_frame_rate": "Frame Rate Limit (DX12)",
+        "y_show_raw": "raw names",
+        "y_show_formatted": "formatted names",
+        "n_enabled_one": "{{count}} enabled",
+        "n_enabled_other": "{{count}} enabled",
+        "dxvk_config": "DXVK Config"
       }
     },
     "ru-RU": {
@@ -1472,7 +2019,8 @@
         "nvidia_commands_driver": "NVIDIA (Драйвер)",
         "amd_commands": "AMD",
         "wrappers": "Обёртки",
-        "wrappers_exec": "Обёртки"
+        "wrappers_exec": "Обёртки",
+        "performance_dxvk": "DXVK"
       },
       "descriptions": {
         "nvidia_commands_driver_description": "Официальные переменные драйвера NVIDIA из игровой документации NVIDIA. В отличие от записей выше, они работают с любым Proton."
@@ -1532,7 +2080,15 @@
         "enable_prefix": "Включить",
         "disable_prefix": "Отключить",
         "dxvk_fg_preset": "Пресет DLSS FG",
-        "conflict_warning": "Может конфликтовать с {{names}} — рассмотрите возможность отключения"
+        "conflict_warning": "Может конфликтовать с {{names}} — рассмотрите возможность отключения",
+        "shadowed_by_custom_variable": "Overridden by custom variable \"{{name}}\"",
+        "vkd3d_swapchain_present_mode": "Swapchain Present Mode",
+        "vkd3d_frame_rate": "Frame Rate Limit (DX12)",
+        "y_show_raw": "raw names",
+        "y_show_formatted": "formatted names",
+        "n_enabled_one": "{{count}} enabled",
+        "n_enabled_other": "{{count}} enabled",
+        "dxvk_config": "DXVK Config"
       }
     },
     "tr-TR": {
@@ -1546,7 +2102,8 @@
         "nvidia_commands_driver": "NVIDIA (Sürücü)",
         "amd_commands": "AMD",
         "wrappers": "Sarmalayıcılar",
-        "wrappers_exec": "Sarmalayıcılar"
+        "wrappers_exec": "Sarmalayıcılar",
+        "performance_dxvk": "DXVK"
       },
       "descriptions": {
         "nvidia_commands_driver_description": "NVIDIA'nın oyun belgelerinden resmi sürücü değişkenleri. Yukarıdaki girişlerin aksine, herhangi bir Proton ile çalışırlar."
@@ -1606,7 +2163,15 @@
         "enable_prefix": "Etkinleştir",
         "disable_prefix": "Devre Dışı Bırak",
         "dxvk_fg_preset": "DLSS FG Ön Ayarı",
-        "conflict_warning": "{{names}} ile çakışabilir — devre dışı bırakmayı düşünün"
+        "conflict_warning": "{{names}} ile çakışabilir — devre dışı bırakmayı düşünün",
+        "shadowed_by_custom_variable": "Overridden by custom variable \"{{name}}\"",
+        "vkd3d_swapchain_present_mode": "Swapchain Present Mode",
+        "vkd3d_frame_rate": "Frame Rate Limit (DX12)",
+        "y_show_raw": "raw names",
+        "y_show_formatted": "formatted names",
+        "n_enabled_one": "{{count}} enabled",
+        "n_enabled_other": "{{count}} enabled",
+        "dxvk_config": "DXVK Config"
       }
     },
     "uk-UA": {
@@ -1620,7 +2185,8 @@
         "nvidia_commands_driver": "NVIDIA (Драйвер)",
         "amd_commands": "AMD",
         "wrappers": "Обгортки",
-        "wrappers_exec": "Обгортки"
+        "wrappers_exec": "Обгортки",
+        "performance_dxvk": "DXVK"
       },
       "descriptions": {
         "nvidia_commands_driver_description": "Офіційні змінні драйвера NVIDIA з ігрової документації NVIDIA. На відміну від записів вище, вони працюють з будь-яким Proton."
@@ -1680,7 +2246,15 @@
         "enable_prefix": "Увімкнути",
         "disable_prefix": "Вимкнути",
         "dxvk_fg_preset": "Пресет DLSS FG",
-        "conflict_warning": "Може конфліктувати з {{names}} — розгляньте можливість вимкнення"
+        "conflict_warning": "Може конфліктувати з {{names}} — розгляньте можливість вимкнення",
+        "shadowed_by_custom_variable": "Overridden by custom variable \"{{name}}\"",
+        "vkd3d_swapchain_present_mode": "Swapchain Present Mode",
+        "vkd3d_frame_rate": "Frame Rate Limit (DX12)",
+        "y_show_raw": "raw names",
+        "y_show_formatted": "formatted names",
+        "n_enabled_one": "{{count}} enabled",
+        "n_enabled_other": "{{count}} enabled",
+        "dxvk_config": "DXVK Config"
       }
     },
     "zh-CN": {
@@ -1694,7 +2268,8 @@
         "nvidia_commands_driver": "NVIDIA（驱动）",
         "amd_commands": "AMD",
         "wrappers": "包装器",
-        "wrappers_exec": "包装器"
+        "wrappers_exec": "包装器",
+        "performance_dxvk": "DXVK"
       },
       "descriptions": {
         "nvidia_commands_driver_description": "来自 NVIDIA 游戏文档的官方驱动变量。与上面的条目不同，它们适用于任何 Proton。"
@@ -1754,7 +2329,15 @@
         "enable_prefix": "启用",
         "disable_prefix": "禁用",
         "dxvk_fg_preset": "DLSS FG 预设",
-        "conflict_warning": "可能与 {{names}} 冲突——建议将其禁用"
+        "conflict_warning": "可能与 {{names}} 冲突——建议将其禁用",
+        "shadowed_by_custom_variable": "Overridden by custom variable \"{{name}}\"",
+        "vkd3d_swapchain_present_mode": "Swapchain Present Mode",
+        "vkd3d_frame_rate": "Frame Rate Limit (DX12)",
+        "y_show_raw": "raw names",
+        "y_show_formatted": "formatted names",
+        "n_enabled_one": "{{count}} enabled",
+        "n_enabled_other": "{{count}} enabled",
+        "dxvk_config": "DXVK Config"
       }
     }
   },
