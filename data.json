@@ -851,6 +851,102 @@
               }
             }
           ]
+        },
+        {
+          "title": "lsfg_vk",
+          "env": "LSFGVK_ENV",
+          "type": "bool",
+          "value": "1",
+          "simple": true,
+          "subGroup": [
+            {
+              "title": "lsfg_vk_disable",
+              "env": "DISABLE_LSFGVK",
+              "type": "bool",
+              "value": "1",
+              "simple": true
+            },
+            {
+              "title": "lsfg_vk_multiplier",
+              "env": "LSFGVK_MULTIPLIER",
+              "type": "enum",
+              "multiSelect": false,
+              "defaultValue": "2",
+              "values": [
+                {
+                  "title": "off",
+                  "value": "1"
+                },
+                {
+                  "title": "x2",
+                  "value": "2"
+                },
+                {
+                  "title": "x3",
+                  "value": "3"
+                },
+                {
+                  "title": "x4",
+                  "value": "4"
+                },
+                {
+                  "title": "x5",
+                  "value": "5"
+                },
+                {
+                  "title": "x6",
+                  "value": "6"
+                }
+              ]
+            },
+            {
+              "title": "lsfg_vk_flow_scale",
+              "env": "LSFGVK_FLOW_SCALE",
+              "type": "value",
+              "valueKind": "number",
+              "defaultValue": "0.8"
+            },
+            {
+              "title": "lsfg_vk_performance_mode",
+              "env": "LSFGVK_PERFORMANCE_MODE",
+              "type": "bool",
+              "value": "1",
+              "simple": true
+            },
+            {
+              "title": "lsfg_vk_no_fp16",
+              "env": "LSFGVK_NO_FP16",
+              "type": "bool",
+              "value": "1",
+              "simple": true
+            },
+            {
+              "title": "lsfg_vk_pacing_mode",
+              "env": "LSFGVK_PACING_MODE",
+              "type": "enum",
+              "multiSelect": false,
+              "defaultValue": "vsync",
+              "values": [
+                {
+                  "title": "lsfg_vk_pacing_vsync",
+                  "value": "vsync"
+                }
+              ]
+            },
+            {
+              "title": "lsfg_vk_override_present_mode",
+              "env": "LSFGVK_OVERRIDE_PRESENT_MODE",
+              "type": "bool",
+              "value": "1"
+            },
+            {
+              "title": "lsfg_vk_dll_path",
+              "env": "LSFGVK_DLL_PATH",
+              "type": "value",
+              "valueKind": "text",
+              "defaultValue": ""
+            }
+          ]
         }
       ]
     },
@@ -880,13 +976,7 @@
           "title": "lsfg",
           "env": "__LSFG",
           "type": "exec",
-          "exec": "~/lsfg"
-        },
-        {
-          "title": "lsfg_vk_experimental",
-          "env": "__LSFG_VK_EXPERIMENTAL",
-          "type": "exec",
-          "exec": "~/.local/bin/lsfg-vk-experimental"
+          "exec": "~/.lsfg"
         },
         {
           "title": "fgmod",
@@ -1510,6 +1600,7 @@
     "en-US": {
       "categories": {
         "upscale": "Upscale",
+        "frame_gen": "Frame Generation",
         "performance": "Performance",
         "compatibility": "Compatibility",
         "debug": "Debug",
@@ -1525,8 +1616,25 @@
         "nvidia_commands_driver_description": "Official NVIDIA driver variables from NVIDIA's gaming documentation. Unlike the entries above, they work with any Proton build."
       },
       "variables": {
-        "lsfg": "LSFG (~/lsfg)",
-        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
+        "off": "Off",
+        "on": "On",
+        "x1": "x1",
+        "x2": "x2",
+        "x3": "x3",
+        "x4": "x4",
+        "x5": "x5",
+        "x6": "x6",
+        "lsfg_vk": "Configure lsfg-vk",
+        "lsfg_vk_disable": "Disable lsfg-vk",
+        "lsfg_vk_multiplier": "Frame rate multiplier",
+        "lsfg_vk_flow_scale": "Flow scale (0.25 - 1.0)",
+        "lsfg_vk_performance_mode": "Performance mode",
+        "lsfg_vk_no_fp16": "Disable FP16 acceleration",
+        "lsfg_vk_pacing_mode": "Frame pacing mode",
+        "lsfg_vk_pacing_vsync": "V-Sync",
+        "lsfg_vk_override_present_mode": "Override Vulkan present mode",
+        "lsfg_vk_dll_path": "Lossless Scaling .dll library path",
+        "lsfg": "lsfg (~/.lsfg)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "mako_run": "MAKO (~/.local/bin/mako-run)",
         "fsr4_upgrade": "FSR4 Upgrade",
@@ -2200,8 +2308,25 @@
         "nvidia_commands_driver_description": "Oficjalne zmienne sterownika NVIDIA z dokumentacji gamingowej NVIDIA. W przeciwieństwie do powyższych wpisów działają z dowolnym Protonem."
       },
       "variables": {
-        "lsfg": "LSFG (~/lsfg)",
-        "lsfg_vk_experimental": "LSFG-VK v2 (~/.local/bin/lsfg-vk-experimental)",
+        "off": "Wyłączone",
+        "on": "Włączone",
+        "x1": "x1",
+        "x2": "x2",
+        "x3": "x3",
+        "x4": "x4",
+        "x5": "x5",
+        "x6": "x6",
+        "lsfg_vk": "Konfiguracja lsfg-vk",
+        "lsfg_vk_disable": "Wyłącz lsfg-vk",
+        "lsfg_vk_multiplier": "Mnożnik generatora klatek",
+        "lsfg_vk_flow_scale": "Rozdzielczość przepływu optycznego (0.25 - 1.0)",
+        "lsfg_vk_performance_mode": "Tryb wydajności",
+        "lsfg_vk_no_fp16": "Wyłącz akcelerację FP16",
+        "lsfg_vk_pacing_mode": "Tryb frame pacingu",
+        "lsfg_vk_pacing_vsync": "V-Sync",
+        "lsfg_vk_override_present_mode": "Nadpisz tryb prezentacji obrazu Vulkana",
+        "lsfg_vk_dll_path": "Ścieżka biblioteki .dll Lossless Scaling",
+        "lsfg": "lsfg (~/.lsfg)",
         "fgmod": "fgmod (~/fgmod/fgmod)",
         "mako_run": "MAKO (~/.local/bin/mako-run)",
         "fsr4_upgrade": "FSR4 Upgrade",
