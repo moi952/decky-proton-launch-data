@@ -947,6 +947,196 @@
               "defaultValue": ""
             }
           ]
+        },
+        {
+          "title": "wine_dll_overrides",
+          "env": "WINEDLLOVERRIDES",
+          "type": "compound",
+          "separator": ";",
+          "flags": [
+            {
+              "title": "dxgi.dll",
+              "value": "dxgi",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "d3d12.dll",
+              "value": "d3d12",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "dbghelp.dll",
+              "value": "dbghelp",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "winmm.dll",
+              "value": "winmm",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "version.dll",
+              "value": "version",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "wininet.dll",
+              "value": "wininet",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "winhttp.dll",
+              "value": "winhttp",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            }
+          ]
         }
       ]
     },
@@ -1699,7 +1889,8 @@
         "y_show_formatted": "formatted names",
         "n_enabled_one": "{{count}} enabled",
         "n_enabled_other": "{{count}} enabled",
-        "dxvk_config": "DXVK Config"
+        "dxvk_config": "DXVK Config",
+        "wine_dll_overrides": "DLL Overrides (Wine)"
       }
     },
     "fr-FR": {
@@ -1783,7 +1974,8 @@
         "y_show_formatted": "noms formatés",
         "n_enabled_one": "{{count}} activé",
         "n_enabled_other": "{{count}} activés",
-        "dxvk_config": "Configuration DXVK"
+        "dxvk_config": "Configuration DXVK",
+        "wine_dll_overrides": "Surcharges de DLL (Wine)"
       }
     },
     "de-DE": {
@@ -1867,7 +2059,8 @@
         "y_show_formatted": "formatted names",
         "n_enabled_one": "{{count}} enabled",
         "n_enabled_other": "{{count}} enabled",
-        "dxvk_config": "DXVK Config"
+        "dxvk_config": "DXVK Config",
+        "wine_dll_overrides": "DLL-Überschreibungen (Wine)"
       }
     },
     "es-ES": {
@@ -1951,7 +2144,8 @@
         "y_show_formatted": "formatted names",
         "n_enabled_one": "{{count}} enabled",
         "n_enabled_other": "{{count}} enabled",
-        "dxvk_config": "DXVK Config"
+        "dxvk_config": "DXVK Config",
+        "wine_dll_overrides": "Sobrescritura de DLL (Wine)"
       }
     },
     "it-IT": {
@@ -2035,7 +2229,8 @@
         "y_show_formatted": "formatted names",
         "n_enabled_one": "{{count}} enabled",
         "n_enabled_other": "{{count}} enabled",
-        "dxvk_config": "DXVK Config"
+        "dxvk_config": "DXVK Config",
+        "wine_dll_overrides": "Override delle DLL (Wine)"
       }
     },
     "ja-JP": {
@@ -2119,7 +2314,8 @@
         "y_show_formatted": "formatted names",
         "n_enabled_one": "{{count}} enabled",
         "n_enabled_other": "{{count}} enabled",
-        "dxvk_config": "DXVK Config"
+        "dxvk_config": "DXVK Config",
+        "wine_dll_overrides": "DLLオーバーライド (Wine)"
       }
     },
     "ko-KR": {
@@ -2203,7 +2399,8 @@
         "y_show_formatted": "formatted names",
         "n_enabled_one": "{{count}} enabled",
         "n_enabled_other": "{{count}} enabled",
-        "dxvk_config": "DXVK Config"
+        "dxvk_config": "DXVK Config",
+        "wine_dll_overrides": "DLL 오버라이드 (Wine)"
       }
     },
     "nl-NL": {
@@ -2287,7 +2484,8 @@
         "y_show_formatted": "formatted names",
         "n_enabled_one": "{{count}} enabled",
         "n_enabled_other": "{{count}} enabled",
-        "dxvk_config": "DXVK Config"
+        "dxvk_config": "DXVK Config",
+        "wine_dll_overrides": "DLL-overrides (Wine)"
       }
     },
     "pl-PL": {
@@ -2391,7 +2589,8 @@
         "y_show_formatted": "formatted names",
         "n_enabled_one": "{{count}} enabled",
         "n_enabled_other": "{{count}} enabled",
-        "dxvk_config": "DXVK Config"
+        "dxvk_config": "DXVK Config",
+        "wine_dll_overrides": "Nadpisania DLL (Wine)"
       }
     },
     "pt-BR": {
@@ -2475,7 +2674,8 @@
         "y_show_formatted": "formatted names",
         "n_enabled_one": "{{count}} enabled",
         "n_enabled_other": "{{count}} enabled",
-        "dxvk_config": "DXVK Config"
+        "dxvk_config": "DXVK Config",
+        "wine_dll_overrides": "Substituições de DLL (Wine)"
       }
     },
     "pt-PT": {
@@ -2559,7 +2759,8 @@
         "y_show_formatted": "formatted names",
         "n_enabled_one": "{{count}} enabled",
         "n_enabled_other": "{{count}} enabled",
-        "dxvk_config": "DXVK Config"
+        "dxvk_config": "DXVK Config",
+        "wine_dll_overrides": "Substituições de DLL (Wine)"
       }
     },
     "ru-RU": {
@@ -2643,7 +2844,8 @@
         "y_show_formatted": "formatted names",
         "n_enabled_one": "{{count}} enabled",
         "n_enabled_other": "{{count}} enabled",
-        "dxvk_config": "DXVK Config"
+        "dxvk_config": "DXVK Config",
+        "wine_dll_overrides": "Переопределение DLL (Wine)"
       }
     },
     "tr-TR": {
@@ -2727,7 +2929,8 @@
         "y_show_formatted": "formatted names",
         "n_enabled_one": "{{count}} enabled",
         "n_enabled_other": "{{count}} enabled",
-        "dxvk_config": "DXVK Config"
+        "dxvk_config": "DXVK Config",
+        "wine_dll_overrides": "DLL geçersiz kılmaları (Wine)"
       }
     },
     "uk-UA": {
@@ -2811,7 +3014,8 @@
         "y_show_formatted": "formatted names",
         "n_enabled_one": "{{count}} enabled",
         "n_enabled_other": "{{count}} enabled",
-        "dxvk_config": "DXVK Config"
+        "dxvk_config": "DXVK Config",
+        "wine_dll_overrides": "Перевизначення DLL (Wine)"
       }
     },
     "zh-CN": {
@@ -2895,7 +3099,8 @@
         "y_show_formatted": "formatted names",
         "n_enabled_one": "{{count}} enabled",
         "n_enabled_other": "{{count}} enabled",
-        "dxvk_config": "DXVK Config"
+        "dxvk_config": "DXVK Config",
+        "wine_dll_overrides": "DLL 覆盖 (Wine)"
       }
     }
   },
