@@ -1135,6 +1135,318 @@
                   }
                 ]
               }
+            },
+            {
+              "title": "dinput8.dll",
+              "value": "dinput8",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "dwmapi.dll",
+              "value": "dwmapi",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "xinput1_3.dll",
+              "value": "xinput1_3",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "dsound.dll",
+              "value": "dsound",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "xinput1_4.dll",
+              "value": "xinput1_4",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "xinput9_1_0.dll",
+              "value": "xinput9_1_0",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "d3d9.dll",
+              "value": "d3d9",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "d3d11.dll",
+              "value": "d3d11",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "d3d8.dll",
+              "value": "d3d8",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "opengl32.dll",
+              "value": "opengl32",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "ddraw.dll",
+              "value": "ddraw",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "d3dcompiler_47.dll",
+              "value": "d3dcompiler_47",
+              "companion": {
+                "kind": "enum",
+                "defaultValue": "n,b",
+                "options": [
+                  {
+                    "title": "n,b",
+                    "value": "n,b"
+                  },
+                  {
+                    "title": "n",
+                    "value": "n"
+                  },
+                  {
+                    "title": "b,n",
+                    "value": "b,n"
+                  },
+                  {
+                    "title": "b",
+                    "value": "b"
+                  }
+                ]
+              }
             }
           ]
         }
